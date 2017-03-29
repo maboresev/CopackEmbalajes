@@ -7,7 +7,7 @@
 
 <body>
 <main>
-<img src="images/copack.png" height="100px" width="300px" />
+<img id="imagencabecera" src="images/copack.jpg" />
 </main>
 </body>
 </html>

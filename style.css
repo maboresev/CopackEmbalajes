@@ -1,0 +1,19 @@
+#imagenpie{
+ width:60px;
+ height: 30px;
+ float:right;
+}
+
+#textopie{
+	text-align: center;
+	font-family: Georgia;
+	color: grey;
+	font-size: 15px;
+}
+
+#imagencabecera{
+	width: 400px;
+	height: 100px;
+	display: block;
+	margin: auto;
+}

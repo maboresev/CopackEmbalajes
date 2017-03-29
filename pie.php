@@ -6,10 +6,12 @@
 </head>
 
 <body>
+<link rel="stylesheet" type="text/css" href="style.css">
 <main>
-<img src="images/us.jpg" width="60px" height="30px" />
-<h5> Introducción a la Ingeniería del Software y los Sistemas de Información @US </h5>
-<h6> Manuel Borrego Reina y Pablo Pazo Jiménez </h6>
+<p id="textopie"> 
+ <img id="imagenpie" src="images/us.jpg" /> Introducción a la Ingeniería del Software y los Sistemas de Información @US 
+<br> Manuel Borrego Reina y Pablo Pazo Jiménez</p>
+
 </main>
 </body>
 </html>
