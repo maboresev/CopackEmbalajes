@@ -7,7 +7,7 @@
 
 <body>
 <main>
-<p> Cabecera </p>
+<img src="images/copack.png" height="100px" width="300px" />
 </main>
 </body>
 </html>
