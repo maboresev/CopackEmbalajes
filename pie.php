@@ -10,7 +10,7 @@
 <main>
 <p id="textopie"> 
  <img id="imagenpie" src="images/us.jpg" /> Introducción a la Ingeniería del Software y los Sistemas de Información @US 
-<br> Manuel Borrego Reina y Pablo Pazo Jiménez</p>
+<br> Manuel Borrego Reina y Pablo Pazo Jiménez  </p>
 
 </main>
 </body>
