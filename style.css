@@ -1,3 +1,8 @@
+h5{
+	text-align: center;
+	font-family: arial;
+}
+
 #linkMenu{
 	text-decoration:none;
 	color: black;
@@ -23,11 +28,27 @@
 	margin: auto;
 }
 
+#imagenTexto{
+	width: 50%;
+	height: 50%;
+	display: block;
+	margin: auto;
+}
+
 #textoGen{
 	text-align: center;
 	font-family: Georgia;
 	color: black;
 	font-size: 25px;
+	margin: 10%
+}
+
+#textoNosotros{
+	text-align: center;
+	font-family: Georgia;
+	color: black;
+	font-size: 22px;
+	margin: 10%
 }
 
 #menu{  

@@ -8,7 +8,7 @@
 
 <body>
 <main>
-<img id="imagencabecera" src="images/copack.jpg" />
+<a title="Copack" href="index.php"><img id="imagencabecera" src="images/copack.jpg" /></a>
 </main>
 </body>
 </html>
