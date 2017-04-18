@@ -2,11 +2,12 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
   <title>Cabecera</title>
 </head>
 
 <body>
-<link rel="stylesheet" type="text/css" href="style.css">
+
 <main>
 <p id="textopie"> 
  <img id="imagenpie" src="images/us.jpg" /> Introducción a la Ingeniería del Software y los Sistemas de Información @US 

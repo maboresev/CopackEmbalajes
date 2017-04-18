@@ -1,6 +1,11 @@
+#linkMenu{
+	text-decoration:none;
+	color: black;
+}
+
 #imagenpie{
- width:60px;
- height: 30px;
+ width:5%;
+ height: 5%;
  float:right;
 }
 
@@ -16,4 +21,28 @@
 	height: 100px;
 	display: block;
 	margin: auto;
+}
+
+#textoGen{
+	text-align: center;
+	font-family: Georgia;
+	color: black;
+	font-size: 25px;
+}
+
+#menu{  
+  background: lightblue;
+  border: 1px solid #7C7C7C;
+  list-style: none;
+  margin: 10%;
+  padding: 0%;
+  overflow: hidden;
+}
+
+#elementoMenu{
+  float: left;
+  width: 24.84%;
+  text-align: center;
+  border-left: 1px solid #FFF;
+  border-right: 1px solid #7C7C7C;
 }
