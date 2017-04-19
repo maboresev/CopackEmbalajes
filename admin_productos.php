@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <title> Administración </title>
+  <title> Adm. Productos </title>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
 		<li id="elementoMenu"><a id="linkMenu" href="gestion_maquinaria.php">Gestión de maquinaria</a></li>
 	</ul>
 
-	<p id="textoGen"> Menú de administración (Página en construcción) </p>
+	<p id="textoGen"> Menú de administración de productos (Página en construcción) </p>
 
 </main>
 
