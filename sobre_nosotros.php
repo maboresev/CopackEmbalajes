@@ -29,6 +29,14 @@
 	de embalajes a las diferentes entidades que los solicitan son encargadas a otras empresas de transporte.<br><br>
 	Para solicitar alguna demanda de embalajes a COPACK es necesario contactar con la empresa mediante nuestro formulario de consulta.</p>
 	
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAhojxsKkadx787giSAHXbNsh1020-hs4U
+    &q=Copack+Embalajes" allowfullscreen>
+</iframe> 
+	
 	<h5><img id="imagenNosotros" src="images/mapa.png" /><br>
 	Aquí estamos </h5>
 	<br><br>
