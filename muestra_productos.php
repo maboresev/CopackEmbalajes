@@ -20,7 +20,7 @@
 		<li id="elementoMenu"><a id="linkMenu" href="contacta.php">Contacta con nosotros</a></li>
 	</ul>
 
-	<p id="textoGen"> Página en construcción </p>
+	<p id="textoGen"> PÃ¡gina en construcciÃ³n </p>
 </main>
 
 <?php
