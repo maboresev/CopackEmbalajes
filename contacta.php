@@ -20,7 +20,22 @@
 		<li id="elementoMenu"><a id="linkMenu" href="contacta.php">Contacta con nosotros</a></li>
 	</ul>
 
+<<<<<<< Updated upstream
 	<p id="textoGen"> PÃ¡gina en construcciÃ³n </p>
+=======
+	<p id="textoGen"> Página en construcción </p>
+	
+	<form id="formularioContacto">
+	Nombre:
+		<input type="text"></input>
+	<br>
+	Correo electrónico:
+		<input type="e-mail" value="example@copack.es"></input>
+	<br>
+	Escríbenos tus dudas:
+		<input type="text" name="Escríbenos tus dudas" value="Escribe aquí"></input>
+	</form>
+>>>>>>> Stashed changes
 </main>
 
 <?php
