@@ -4,6 +4,30 @@ h5{
 	font-family: arial;
 }
 
+input[type=text]{
+	margin-bottom:1%;
+	display: inline-block;
+	border-radius: 5%;
+	vertical-align: middle;
+	width: 40%;
+	margin-left: 11.55%;
+}
+
+input[type=e-mail]{
+	margin-bottom:1%;
+	display: inline-block;
+	border-radius: 5%;
+	vertical-align: middle;
+	width: 40%;
+	margin-left: 2%;
+}
+
+textarea{
+	display: inline-block;
+	border-radius: 1%;
+	width: 100%;
+}
+
 #linkMenu{
 	text-decoration:none;
 	color: black;
@@ -56,7 +80,8 @@ h5{
   background: lightblue;
   border: 1px solid #7C7C7C;
   list-style: none;
-  margin: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
   padding: 0%;
   overflow: hidden;
 }
@@ -67,4 +92,17 @@ h5{
   text-align: center;
   border-left: 1px solid #FFF;
   border-right: 1px solid #7C7C7C;
+}
+
+#formularioContacto{
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-bottom: 5%;
+	font-family: Georgia;
+	font-size: 20px;
+}
+
+#leyendaContacto{
+	font-size:25px;
+	font-weight: bold;
 }

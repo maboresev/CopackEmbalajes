@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <title> ï¿½ndice principal </title>
+  <title> Contacta con nosotros </title>
 </head>
 
 <body>
@@ -20,22 +20,21 @@
 		<li id="elementoMenu"><a id="linkMenu" href="contacta.php">Contacta con nosotros</a></li>
 	</ul>
 
-<<<<<<< Updated upstream
 	<p id="textoGen"> PÃ¡gina en construcciÃ³n </p>
-=======
-	<p id="textoGen"> Página en construcción </p>
 	
 	<form id="formularioContacto">
-	Nombre:
-		<input type="text"></input>
+	<legend id="leyendaContacto">Formulario de contacto:</legend><br>
+	<label>Nombre:       
+		<input type="text" placeholder="Tu nombre..." required></input></label> 
 	<br>
-	Correo electrónico:
-		<input type="e-mail" value="example@copack.es"></input>
+	<label>Correo electronico:
+		<input type="e-mail" placeholder="example@copack.es" required></input></label>
 	<br>
-	Escríbenos tus dudas:
-		<input type="text" name="Escríbenos tus dudas" value="Escribe aquí"></input>
+	Escribenos tus dudas:<br>
+		<textarea rows="10" name="Escribenos tus dudas" placeholder="Escribe aqui" required></textarea>
+	<br>
+		<input type="submit" value="enviar" reset></input>
 	</form>
->>>>>>> Stashed changes
 </main>
 
 <?php
