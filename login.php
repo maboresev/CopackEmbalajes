@@ -12,6 +12,6 @@ Nickname:<br>
 Contraseña:<br>
 <input type="password" name="password" required=""><br><br>
 <button type="submit" name="login">Log in</button>
-<a href="register.html">Regístrate</a>
+<a href="register.php">Regístrate</a>
 </form>
 </html>

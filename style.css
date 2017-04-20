@@ -1,9 +1,20 @@
+/* Elementos generales */
+html{
+	background-color: #f2f2f2;
+}
 
 h5{
 	text-align: center;
 	font-family: arial;
 }
 
+textarea{
+	display: inline-block;
+	border-radius: 1%;
+	width: 100%;
+}
+
+/* Elementos de formularios */
 input[type=text]{
 	margin-bottom:1%;
 	display: inline-block;
@@ -22,28 +33,58 @@ input[type=e-mail]{
 	margin-left: 2%;
 }
 
-textarea{
-	display: inline-block;
-	border-radius: 1%;
-	width: 100%;
+#formularioContacto{
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-bottom: 5%;
+	margin-top: 7%;
+	font-family: Georgia;
+	font-size: 20px;
 }
 
-#linkMenu{
+/* Elementos de menus */
+#menuPrincipal{  
+  background: none;
+  border: none;
+  list-style: none;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 1%;
+  padding: 0%;
+  overflow: hidden;
+}
+
+.menu li{
+  float: left;
+  background-color: lightblue;
+  text-align: center;
+  display: inline-block;
+  border-width: 0.3%;
+  border-radius: 5%;
+  border-style: groove;
+  border-color: #f2f2f2;
+  padding-left: 8.31%;
+  padding-right: 8.318%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+}
+
+.menu li a{
 	text-decoration:none;
 	color: black;
 }
 
+.menu li a:hover{
+	text-decoration: none;
+	background-color: #553344;
+	color: white;
+}
+
+/* Imagenes */
 #imagenpie{
  width:5%;
  height: 5%;
  float:right;
-}
-
-#textopie{
-	text-align: center;
-	font-family: Georgia;
-	color: grey;
-	font-size: 15px;
 }
 
 #imagencabecera{
@@ -60,49 +101,37 @@ textarea{
 	margin: auto;
 }
 
-#textoGen{
+/* Textos */
+#textopie{
+	text-align: center;
+	font-family: Georgia;
+	color: grey;
+	font-size: 15px;
+}
+
+.textoGen{
 	text-align: center;
 	font-family: Georgia;
 	color: black;
 	font-size: 25px;
-	margin: 10%
+	margin: 10%;
 }
 
 #textoNosotros{
-	text-align: center;
-	font-family: Georgia;
-	color: black;
 	font-size: 22px;
-	margin: 10%
-}
-
-#menu{  
-  background: lightblue;
-  border: 1px solid #7C7C7C;
-  list-style: none;
-  margin-left: 10%;
-  margin-right: 10%;
-  padding: 0%;
-  overflow: hidden;
-}
-
-#elementoMenu{
-  float: left;
-  width: 24.84%;
-  text-align: center;
-  border-left: 1px solid #FFF;
-  border-right: 1px solid #7C7C7C;
-}
-
-#formularioContacto{
-	margin-left: 20%;
-	margin-right: 20%;
-	margin-bottom: 5%;
-	font-family: Georgia;
-	font-size: 20px;
+	margin-bottom: 4%;
+	margin-top: 7%;
 }
 
 #leyendaContacto{
 	font-size:25px;
 	font-weight: bold;
+}
+
+/* Elementos externos */
+
+#googleMaps{
+	margin-left:25%;
+	margin-right:25%;
+	margin-bottom: 0%;
 }
