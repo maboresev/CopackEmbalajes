@@ -9,7 +9,7 @@ Apellidos:*<br>
 Contraseña:*<br>
 <input type="password" name="password" required><br>
 Confirmar contraseña:*<br>
-<input type="password" name="passwordconf" required><br>
+<input type="password" name="passwordconf"><br>
 Email:*<br>
 <input type="text" name="email" required><br>
 Empresa:*<br>

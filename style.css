@@ -63,8 +63,8 @@ input[type=e-mail]{
   border-radius: 5%;
   border-style: groove;
   border-color: #f2f2f2;
-  padding-left: 8.31%;
-  padding-right: 8.318%;
+  padding-left: 8%;
+  padding-right: 8%;
   padding-top: 0.5%;
   padding-bottom: 0.5%;
 }
@@ -126,6 +126,26 @@ input[type=e-mail]{
 #leyendaContacto{
 	font-size:25px;
 	font-weight: bold;
+}
+
+.exception{
+	text-align: center;
+	font-family: arial;
+	font-size: 25px;
+	margin-left: 10%;
+	margin-right: 10%;
+	color: brown;
+}
+
+.exception p{
+	font-size: 18px;
+	color: black;
+}
+
+#infoExcepcion{
+	font-size: 20px;
+	color: brown;
+	margin-bottom: 7%;
 }
 
 /* Elementos externos */
