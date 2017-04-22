@@ -3,22 +3,21 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <title> Gestión de pedidos </title>
+  <title> Maquinaria </title>
 </head>
 
 <body>
 
 <?php
 	include_once("cabecera.php");
-	include_once("menu_adm.php");
-
+	include_once("menu_mantenimiento.php");
 ?>
 
 <main>
 
-<div>
-	<p id="textoGen"> Menú de gestión de pedidos (Página en construcción) </p>
-</div>
+	<div>
+		<p id="textoGen"> Gestión de maquinaria </p>
+	</div>
 </main>
 
 <?php

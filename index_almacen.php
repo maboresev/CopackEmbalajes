@@ -1,24 +1,23 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <title> Gestión de pedidos </title>
+  <title> Almacén  </title>
 </head>
 
 <body>
 
 <?php
 	include_once("cabecera.php");
-	include_once("menu_adm.php");
-
+	include_once("menu_almacen.php");
 ?>
 
 <main>
 
-<div>
-	<p id="textoGen"> Menú de gestión de pedidos (Página en construcción) </p>
-</div>
+	<div>
+		<p class="textoGen"> Almacén </p>
+	</div>
 </main>
 
 <?php
