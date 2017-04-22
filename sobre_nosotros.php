@@ -15,7 +15,7 @@
 
 <main>
 	<p class="textoGen" id="textoNosotros">COPACK 2005 S.L. es una empresa dedicada a la fabricación de embalajes de papel, cartón y plástico. 
-	Estamos en la Calle Junco 0, Valencina de la Concepción (Sevilla), y llevamos en funcionamiento desde 2005. (<a href="http://copack-2005.pymes.com/">Fuente</a> )<br><br>
+	Estamos en la Calle Junco 0, Valencina de la Concepción (Sevilla), y llevamos en funcionamiento desde 2005. (<a class="enlaceGeneral" href="http://copack-2005.pymes.com/">Fuente</a> )<br><br>
 	La empresa hace uso de distinta maquinaria y empleados para satisfacer la demanda de sus clientes en lo referente a embalajes.
 	Trabajamos casi exclusivamente bajo encargo, ya que necesitamos cierto tiempo para la creación de los embalajes. 
 	Esta empresa se encarga exclusivamente de la fabricación de los embalajes el transporte tanto de las materias primas que reciben y el envío

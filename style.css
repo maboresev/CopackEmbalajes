@@ -1,11 +1,13 @@
 /* Elementos generales */
 html{
-	background-color: #f2f2f2;
+	background-image: url("images/background.jpg");
+	opacity: 50%;
 }
 
 h5{
 	text-align: center;
 	font-family: arial;
+	color: white;
 }
 
 textarea{
@@ -13,6 +15,7 @@ textarea{
 	border-radius: 1%;
 	width: 100%;
 }
+
 
 /* Elementos de formularios */
 input[type=text]{
@@ -42,6 +45,10 @@ input[type=e-mail]{
 	font-size: 20px;
 }
 
+#areaEscribe{
+	margin-top: 1%;
+}
+
 /* Elementos de menus */
 #menuPrincipal{  
   background: none;
@@ -60,13 +67,15 @@ input[type=e-mail]{
   text-align: center;
   display: inline-block;
   border-width: 0.3%;
-  border-radius: 5%;
-  border-style: groove;
-  border-color: #f2f2f2;
-  padding-left: 8%;
-  padding-right: 8%;
+  border-radius: 50%;
+  border-style: double;
+  border-color: brown;
+  padding-left: 4%;
+  padding-right: 4%;
   padding-top: 0.5%;
   padding-bottom: 0.5%;
+  margin-left: 4%;
+  margin-right: 4%;
 }
 
 .menu li a{
@@ -74,10 +83,15 @@ input[type=e-mail]{
 	color: black;
 }
 
-.menu li a:hover{
+.menu li:hover{
 	text-decoration: none;
-	background-color: #553344;
-	color: white;
+	background-color: #FC6;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.menu li:hover a{
+	color: blue;
 	transition: 0.5s;
 }
 
@@ -106,14 +120,14 @@ input[type=e-mail]{
 #textopie{
 	text-align: center;
 	font-family: Georgia;
-	color: grey;
+	color: #f2f2f2;
 	font-size: 15px;
 }
 
 .textoGen{
 	text-align: center;
 	font-family: Georgia;
-	color: black;
+	color: white;
 	font-size: 25px;
 	margin: 10%;
 }
@@ -127,6 +141,12 @@ input[type=e-mail]{
 #leyendaContacto{
 	font-size:25px;
 	font-weight: bold;
+	color: #f2f2f2;
+	text-decoration: underline;
+}
+#formContacto{
+	font-size:20px;
+	color: white;
 }
 
 .exception{
@@ -147,6 +167,17 @@ input[type=e-mail]{
 	font-size: 20px;
 	color: brown;
 	margin-bottom: 7%;
+}
+
+/* Enlaces y vínculos */
+
+.enlaceGeneral{
+	color: lightblue;
+	text-decoration: none;
+}
+
+.enlaceGeneral:hover{
+	color: violet;
 }
 
 /* Elementos externos */
