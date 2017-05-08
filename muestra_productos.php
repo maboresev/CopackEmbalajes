@@ -1,24 +1,16 @@
 <?php
 	session_start();
 
-	include_once("gestionBD.php");
-	include_once("gestionProductos.php");
-
-	if(isset($_SESSION["producto"])){
+	require_once("gestionBD.php");
+	require_once("gestionProductos.php");
+	
+	if (isset($_SESSION["producto"])){
 		$producto = $_SESSION["producto"];
 		unset($_SESSION["producto"]);
 	}
-	else{
-		$conexion=crearConexionBD();
-		$producto=$_SESSION["producto"];
-		
-		$query= "SELECT * FROM PRODUCTO, MASTERMAT"
-		. " WHERE (PRODUCTO.OID_P = PRODUCTO.OID_P"
-		. " ORDER BY NOMBRE";
-		
-		$filas = consultarTodosProductos($conexion, $query);
-	}
-	
+
+	$conexion = crearConexionBD();
+	$filas = consultarTodosProductos($conexion);
 	cerrarConexionBD($conexion);
 ?>
 
@@ -44,10 +36,40 @@
 	
 	<div>
 	<?php
-		foreach ($filas as $fila){
+		foreach($filas as $fila) {
 	?>
-	<?php if((isset ($producto))and ($producto["oid_p"] == $fila["oid_p"])){ ?>
-		<p class="textoGen"> Producto: <?php $producto["nombre"] ?>. Precio: <?php $producto["precio"] ?>. </p> <?php }} ?>
+
+	<article class="producto">
+		<form method="get" action="controlador_libros.php">
+			<div class="fila_producto">
+				<div class="datos_producto">		
+					<!-- Controles de los campos que quedan ocultos:
+						OID_LIBRO, OID_AUTOR, OID_AUTORIA, NOMBRE, APELLIDOS -->
+					<input type="hidden" id="OID_P" name="OID_P" value="<?php echo $fila["OID_P"]; ?>"/>
+				<?php
+					if (isset($producto)&&($producto["OID_P"] == $fila["OID_P"])) { ?>
+						<!-- Editando título -->
+						<input type="text" id="NOMBRE" name="NOMBRE" value=<?php echo $fila["NOMBRE"]; ?>" />
+						<?php	echo "Precio ".$fila["PRECIO"];	?>
+						
+						<?php }	else { 
+						echo "<p class='textoGen'>"."Producto: ".$fila["NOMBRE"].". ";
+						echo "Material: ".$fila["MATERIAL"].". ";
+						echo "Medidas: ".$fila["MEDIDAS"].". ";
+						echo "Canal: ".$fila["CANAL"].". ";
+						echo "Stock en almacén: ".$fila["STOCK"].". ";
+						echo "Precio(unidad): ".$fila["PRECIOUNITARIO"]."."."</p>";
+						?>
+						<!-- mostrando título -->						
+				<?php } ?>
+
+				</div>
+				
+			</div>
+		</form>
+	</article>
+
+	<?php } ?>
 	</div>
 </main>
 
