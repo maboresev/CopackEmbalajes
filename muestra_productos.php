@@ -31,10 +31,8 @@
 ?>
 
 <main>
-	<p class="textoGen"> Página en construcción </p>
-	
-	
-	<div>
+
+	<div class="margenTop">
 	<?php
 		foreach($filas as $fila) {
 	?>
@@ -53,13 +51,13 @@
 						<?php	echo "Precio ".$fila["PRECIO"];	?>
 						
 						<?php }	else { 
-						echo "<p class='textoGen'>"."Producto: ".$fila["NOMBRE"].". ";
+						echo "<p>"."Producto: ".$fila["NOMBRE"].". ";
 						echo "Material: ".$fila["MATERIAL"].". ";
 						echo "Medidas: ".$fila["MEDIDAS"].". ";
 						echo "Canal: ".$fila["CANAL"].". ";
 						echo "Stock en almacén: ".$fila["STOCK"].". ";
-						echo "Precio(unidad): ".$fila["PRECIOUNITARIO"]."."."</p>";
-						?>
+						echo "Precio(unidad): ".$fila["PRECIOUNITARIO"].".";
+						?><img id="imagenInfo" src="images/info.png"/></p>
 						<!-- mostrando título -->						
 				<?php } ?>
 
