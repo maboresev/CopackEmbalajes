@@ -1,10 +1,4 @@
-<?php
-  //Guarda los valores del formulario.
-  $nombre = $_POST["nombre"];
-  $correo = $_POST["email"];
-  $particular = $_POST["particular"];
-  $mensaje = $_POST["mensaje"];
-?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -44,24 +38,7 @@
 <?php
 	include_once("pie.php");
 ?>
-  <?php
-    // Si hay valores en blanco no hacer nada y borrar lo que hay en #contenido.
-    if ($nombre == "" || $correo == "" || $particular == "" || $mensaje == "") {
-      echo '<script type="text/javascript">document.getElementById("contenido").innerHTML = "";</script>';
-    } else {
-      $para = "localhost";
-      $msjCorreo = "Nombre: $nombre\n E-Mail: $correo\n Particular: $particular\n Mensaje:\n $mensaje";
-	  $headers = "From: localhost";
-      $envio = mail($para, $correo, $msjCorreo, $headers);
-      // Revisar el envío y según lo que pase mostrar mensaje.
-      if($envio){
-        echo '<script type="text/javascript">document.getElementById("contenido").innerHTML = "El formulario se envío con éxito";</script>';
-      } else {
-        echo '<script type="text/javascript">document.getElementById("contenido").innerHTML = "Fallo el envío del formulario.";</script>';
-      }
-    }
-  ?>
 
+  
 </body>
-
 </html>
