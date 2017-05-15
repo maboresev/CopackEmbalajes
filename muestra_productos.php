@@ -54,7 +54,25 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="./js/jquery-ui.css"/>
+  <script src="./js/jquery.js"></script>
+  <script src="./js/jquery-ui.min.js"></script>
   <title> Nuestros productos </title>
+  <script>
+  $(document).ready(function(){
+	  $(".info").on("click", function(){
+		  var img=(this);
+		  $.get("gestion_datos_producto.php",{ producto:1011}, function(data){
+			  
+			  
+			 // añadir dentro del div la info data
+			  $("#div_"+img.id).dialog();
+		  
+		  });
+	  });
+  });
+ </script>
+  
 </head>
 
 <body>
@@ -113,11 +131,12 @@
 						echo "Canal: ".$fila["CANAL"].". ";
 						echo "Stock en almacén: ".$fila["STOCK"].". "; */
 						echo "Precio(unidad): ".$fila["PRECIOUNITARIO"]."€.";
-						?><img id="imagenInfo" src="images/info.png"/></p>
+						?><img class="info"  id="<?php echo $fila["OID_P"]; ?>" src="images/info.png"/><div id="<?php echo "div_".$fila["OID_P"]; ?>"></div></p>
 						<!-- mostrando título -->						
 				<?php } ?>
 
 				</div>
+
 				
 			</div>
 		</form>
