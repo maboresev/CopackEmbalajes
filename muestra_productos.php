@@ -3,13 +3,14 @@
 
 	require_once("gestionBD.php");
 	require_once("gestionProductos.php");
-/*	require_once("consulta_paginada.php");*/
+	require_once("gestion_datos_producto.php");
+	require_once("consulta_paginada.php");
 	
 	if (isset($_SESSION["producto"])){
 		$producto = $_SESSION["producto"];
 		unset($_SESSION["producto"]);
 	}
-/*	
+/*
 	// ¿Venimos simplemente de cambiar página o de haber seleccionado un registro ?
 	// ¿Hay una sesión activa?
 	if (isset($_SESSION["paginacion"])) $paginacion = $_SESSION["paginacion"];
@@ -62,7 +63,7 @@
   $(document).ready(function(){
 	  $(".info").on("click", function(){
 		  var img=(this);
-		  $.get("gestion_datos_producto.php",{ producto:1011}, function(data){
+		  $.get("gestion_datos_producto.php",{ producto:1010}, function(data){
 			  
 			  
 			 // añadir dentro del div la info data
@@ -83,7 +84,7 @@
 ?>
 
 <main>
-<?php /*	 <nav>
+	 <nav>
 		<div id="enlaces">
 			<?php
 				for( $pagina = 1; $pagina <= $total_paginas; $pagina++ )
@@ -103,7 +104,7 @@
 			entradas de <?php echo $total_registros?>
 			<input type="submit" value="Cambiar">
 		</form>
-	</nav> */?>
+	</nav> 
 
 
 	<div class="margenTop">
@@ -131,7 +132,7 @@
 						echo "Canal: ".$fila["CANAL"].". ";
 						echo "Stock en almacén: ".$fila["STOCK"].". "; */
 						echo "Precio(unidad): ".$fila["PRECIOUNITARIO"]."€.";
-						?><img class="info"  id="<?php echo $fila["OID_P"]; ?>" src="images/info.png"/><div id="<?php echo "div_".$fila["OID_P"]; ?>"></div></p>
+						?><img class="info" id="<?php echo $fila["OID_P"]; ?>" src="images/info.png"/><div id="<?php echo "div_".$fila["OID_P"]; ?>"></div></p>
 						<!-- mostrando título -->						
 				<?php } ?>
 
