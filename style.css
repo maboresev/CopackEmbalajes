@@ -192,12 +192,25 @@ input[type=e-mail]{
 	margin-left: 2%;
 }
 
+.botones_fila{
+ width:25%;
+ float:right;
+}
+
+#editar{
+	 float:right;
+}
+
+#borrar{
+	 float:right;
+}
+
 .info{
  width:2%;
  height: 2%;
  float:right;
  margin-right: 0.5%;
-}
+} 
 
 /* Enlaces y vínculos */
 

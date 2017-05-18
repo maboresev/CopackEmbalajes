@@ -13,6 +13,10 @@
 			$producto["CANAL"]=$_REQUEST["CANAL"];
 		
 		$_SESSION["PRODUCTO"]=$producto;
+		
+		if (isset($_REQUEST["editar"])) Header("Location: admin_productos.php"); 
+		else if (isset($_REQUEST["grabar"])) Header("Location: accion_modificar_producto.php");
+		else if (isset($_REQUEST["borrar"]))  Header("Location: accion_borrar_producto.php"); 
 		}
 		
 		else{

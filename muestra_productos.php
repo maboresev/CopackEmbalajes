@@ -86,16 +86,16 @@
 <main>
 	 <nav>
 		<div id="enlaces">
-			<?php
+			<?php /*
 				for( $pagina = 1; $pagina <= $total_paginas; $pagina++ )
 					if ( $pagina == $pagina_seleccionada) { 	?>
 						<span class="current"><?php echo $pagina; ?></span>
 			<?php }	else { ?>
 						<a href="muestra_productos.php?PAG_NUM=<?php echo $pagina; ?>&PAG_TAM=<?php echo $pag_tam; ?>"><?php echo $pagina; ?></a>
-			<?php } ?>
+			<?php } */?>
 		</div>
 
-		<form method="get" action="muestra_productos.php">
+	<?php /*	<form method="get" action="muestra_productos.php">
 			<input id="PAG_NUM" name="PAG_NUM" type="hidden" value="<?php echo $pagina_seleccionada?>"/>
 			Mostrando
 			<input id="PAG_TAM" name="PAG_TAM" type="number"
@@ -103,7 +103,7 @@
 				value="<?php echo $pag_tam?>" autofocus="autofocus" />
 			entradas de <?php echo $total_registros?>
 			<input type="submit" value="Cambiar">
-		</form>
+		</form> */ ?>
 	</nav> 
 
 
@@ -116,8 +116,7 @@
 		<form method="get" action="controlador_libros.php">
 			<div class="fila_producto">
 				<div class="datos_producto">		
-					<!-- Controles de los campos que quedan ocultos:
-						OID_LIBRO, OID_AUTOR, OID_AUTORIA, NOMBRE, APELLIDOS -->
+					<!-- Controles de los campos que quedan ocultos -->
 					<input type="hidden" id="OID_P" name="OID_P" value="<?php echo $fila["OID_P"]; ?>"/>
 				<?php
 					if (isset($producto)&&($producto["OID_P"] == $fila["OID_P"])) { ?>
@@ -137,7 +136,6 @@
 				<?php } ?>
 
 				</div>
-
 				
 			</div>
 		</form>
