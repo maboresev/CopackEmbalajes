@@ -55,23 +55,15 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <link rel="stylesheet" type="text/css" href="./js/jquery-ui.css"/>
-  <script src="./js/jquery.js"></script>
-  <script src="./js/jquery-ui.min.js"></script>
   <title> Nuestros productos </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
-  $(document).ready(function(){
-	  $(".info").on("click", function(){
-		  var img=(this);
-		  $.get("gestion_datos_producto.php",{ producto:1010}, function(data){
-			  
-			  
-			 // añadir dentro del div la info data
-			  $("#div_"+img.id).dialog();
-		  
-		  });
-	  });
-  });
+	$(document).ready(function(){
+		$("h4").hide();
+		$("button").click(function(){
+			$("h4").toggle();
+		});
+	});
  </script>
   
 </head>
@@ -105,15 +97,14 @@
 			<input type="submit" value="Cambiar">
 		</form> */ ?>
 	</nav> 
-
-
+		
 	<div class="margenTop">
 	<?php
 		foreach($filas as $fila) {
 	?>
 
 	<article class="producto">
-		<form method="get" action="controlador_libros.php">
+		<form method="get" action="controlador_productos.php">
 			<div class="fila_producto">
 				<div class="datos_producto">		
 					<!-- Controles de los campos que quedan ocultos -->
@@ -122,16 +113,18 @@
 					if (isset($producto)&&($producto["OID_P"] == $fila["OID_P"])) { ?>
 						<!-- Editando título -->
 						<input type="text" id="NOMBRE" name="NOMBRE" value=<?php echo $fila["NOMBRE"]; ?>" />
-						<?php	echo "Precio ".$fila["PRECIO"];	?>
+						<?php	echo "Precio ".$fila["PRECIOUNITARIO"];	?>
 						
 						<?php }	else { 
 						echo "<p>"."<strong>"."Producto: ".$fila["NOMBRE"]."</strong>".". ";
-						/* echo "Material: ".$fila["MATERIAL"].". ";
+						echo "Precio(unidad): ".$fila["PRECIOUNITARIO"]."€.";
+						?>
+						</p>
+						<h4><?php echo "Material: ".$fila["MATERIAL"].". ";
 						echo "Medidas: ".$fila["MEDIDAS"].". ";
 						echo "Canal: ".$fila["CANAL"].". ";
-						echo "Stock en almacén: ".$fila["STOCK"].". "; */
-						echo "Precio(unidad): ".$fila["PRECIOUNITARIO"]."€.";
-						?><img class="info" id="<?php echo $fila["OID_P"]; ?>" src="images/info.png"/><div id="<?php echo "div_".$fila["OID_P"]; ?>"></div></p>
+						echo "Stock en almacén: ".$fila["STOCK"].". "; ?>
+						</h4>
 						<!-- mostrando título -->						
 				<?php } ?>
 
@@ -139,9 +132,14 @@
 				
 			</div>
 		</form>
+		
 	</article>
 
 	<?php } ?>
+	
+	</div>
+	<div class="margenInfo">
+		<button class="botonInfo" title="Clicka para más información"><img class="info" src="images/info.png"/></button>
 	</div>
 </main>
 

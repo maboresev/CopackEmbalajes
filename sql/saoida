@@ -1,0 +1,80 @@
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Error que empieza en la línea: 67 del comando :
+execute inserta_linea_factura('340000', '1002', '500', '0', '0', '0', '0')
+Informe de error -
+ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'INSERTA_LINEA_FACTURA'
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+06550. 00000 -  "line %s, column %s:\n%s"
+*Cause:    Usually a PL/SQL compilation error.
+*Action:
+
+Error que empieza en la línea: 68 del comando :
+execute inserta_linea_factura('340000', '1005', '1000', '0', '0', '0', '0')
+Informe de error -
+ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'INSERTA_LINEA_FACTURA'
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+06550. 00000 -  "line %s, column %s:\n%s"
+*Cause:    Usually a PL/SQL compilation error.
+*Action:
+
+Error que empieza en la línea: 69 del comando :
+execute inserta_linea_factura('340000', '1011', '300', '5', '55', '0', '0')
+Informe de error -
+ORA-06550: line 1, column 7:
+PLS-00306: wrong number or types of arguments in call to 'INSERTA_LINEA_FACTURA'
+ORA-06550: line 1, column 7:
+PL/SQL: Statement ignored
+06550. 00000 -  "line %s, column %s:\n%s"
+*Cause:    Usually a PL/SQL compilation error.
+*Action:

@@ -21,13 +21,13 @@ END alta_cliente;
 /* Procedimiemto de creacion de un nuevo usuario de mantenimiento */
 CREATE OR REPLACE PROCEDURE alta_mantenimiento
   (w_oid IN USUARIO_MANTENIMIENTO.OID_UM%TYPE,
-   w_cont IN USUARIO_MANTENIMIENTO.CONTRASEÑA%TYPE,
+   w_nom IN USUARIO_MANTENIMIENTO.Nombre%TYPE,
    w_ape IN USUARIO_MANTENIMIENTO.APELLIDOS%TYPE,
    w_mail IN USUARIO_MANTENIMIENTO.CORREOELECTRONICO%TYPE,
-   w_nom IN USUARIO_MANTENIMIENTO.Nombre%TYPE) IS
+      w_cont IN USUARIO_MANTENIMIENTO.CONTRASEÑA%TYPE) IS
   BEGIN
   INSERT INTO USUARIO_MANTENIMIENTO
-    VALUES (w_oid, w_ape, w_mail, w_cont, w_nom);
+    VALUES (w_oid, w_nom, w_ape, w_mail, w_cont);
   COMMIT WORK;
 END alta_mantenimiento;
 
@@ -36,13 +36,13 @@ END alta_mantenimiento;
 /* Procedimiento de creación de un nuevo usuario de almacén */
 CREATE OR REPLACE PROCEDURE alta_almacen
   (w_oid IN USUARIO_ALMACEN.OID_UAL%TYPE,
+   w_nom IN USUARIO_ALMACEN.Nombre%TYPE,
    w_ape IN USUARIO_ALMACEN.APELLIDOS%TYPE,
    w_mail IN USUARIO_ALMACEN.CORREOELECTRONICO%TYPE,
-   w_cont IN USUARIO_ALMACEN.CONTRASEÑA%TYPE,
-   w_nom IN USUARIO_ALMACEN.Nombre%TYPE) IS
+   w_cont IN USUARIO_ALMACEN.CONTRASEÑA%TYPE) IS
   BEGIN
   INSERT INTO USUARIO_ALMACEN
-    VALUES (w_oid, w_ape, w_mail, w_cont, w_nom);
+    VALUES (w_oid, w_nom, w_ape, w_mail, w_cont);
   COMMIT WORK;
 END alta_almacen;
 
@@ -51,13 +51,13 @@ END alta_almacen;
 /* Procedimiento de creacion de un nuevo usuario de administracion */ 
 CREATE OR REPLACE PROCEDURE alta_administracion
   (w_oid IN USUARIO_ADMINISTRACION.OID_UAD%TYPE,
-   w_cont IN USUARIO_ADMINISTRACION.CONTRASEÑA%TYPE,
+   w_nom IN USUARIO_ADMINISTRACION.Nombre%TYPE,
    w_ape IN USUARIO_ADMINISTRACION.APELLIDOS%TYPE,
    w_mail IN USUARIO_ADMINISTRACION.CORREOELECTRONICO%TYPE,
-   w_nom IN USUARIO_ADMINISTRACION.Nombre%TYPE) IS
+   w_cont IN USUARIO_ADMINISTRACION.CONTRASEÑA%TYPE) IS
   BEGIN
   INSERT INTO USUARIO_ADMINISTRACION
-    VALUES (w_oid, w_ape, w_mail, w_cont, w_nom);
+    VALUES (w_oid, w_nom, w_ape, w_mail, w_cont);
   COMMIT WORK;
 END alta_administracion;
 
