@@ -14,7 +14,7 @@ Email:*<br>
 <input type="text" name="email" required><br>
 Empresa:*<br>
 <input type="text" name="empresa" required><br>
-<label>Tipo de usuario**:</label>
+<label>Tipo de usuario*:</label>
 				<label>
 					<input name="tipo_usuario" type="radio" value="CLIENTE"/>
 					Cliente</label>
@@ -28,7 +28,6 @@ Empresa:*<br>
 					<input name="tipo_usuario" type="radio" value="ALMACEN" />
 					Almacén</label>
 				<br>
-** Los usuarios no clientes deben ser aceptados por el administrador
 				<br>
 					<input name="Registrar" type="submit" value = "Registrar" formaction="index.php">
 </form>
