@@ -20,7 +20,8 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>Gestión de Biblioteca: Alta de Usuario realizada con éxito</title>
+  <title>Gestión de Usuarios: Alta de Usuario realizada con éxito</title>  
+  <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
@@ -32,10 +33,8 @@
 		<?php if (insertaCliente($conexion, $nuevoUsuario)) { 
 				$_SESSION['login'] = $nuevoUsuario['email'];
 		?>
-				<h1>Hola <?php echo $nuevoUsuario["nombre"]; ?>, gracias por registrarte</h1>
-				<div >	
-			   		Pulsa <a href="index.php">aquí</a> para acceder a la gestión de biblioteca.
-				</div>
+				<p class="textoGen">Hola <strong><?php echo $nuevoUsuario["nombre"]; ?></strong>, gracias por registrarte<br><br>
+			   		Pulsa <a href="index_cliente.php" class="enlaceRedirige">aquí</a> para acceder a la gestión de sus pedidos.</p>
 		<?php } else { ?>
 				<h1>El usuario ya existe en la base de datos.</h1>
 				<div >	

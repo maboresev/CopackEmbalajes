@@ -64,6 +64,16 @@ execute inserta_linea_pedido('330002', '1001', '425');
 
 execute inserta_factura('0', '330000', TO_DATE('2017-05-12 17:12:17', 'YYYY-MM-DD HH24:MI:SS'), '00', '0', '1');
 
-execute inserta_linea_factura('340000', '1002', '500', '0', '0', '0', '0');
-execute inserta_linea_factura('340000', '1005', '1000', '0', '0', '0', '0');
-execute inserta_linea_factura('340000', '1011', '300', '5', '55', '0', '0');
+execute inserta_linea_factura('340000', '1002', '500');
+execute inserta_linea_factura('340000', '1005', '1000');
+execute inserta_linea_factura('340000', '1011', '300');
+
+/* Máquinas */
+
+execute nueva_maquina (1, 'Impresora', 'Buena', sysdate);
+execute nueva_maquina (2, 'Troqueladora', 'Buena', '01/01/2018');
+execute nueva_maquina (3, 'Troqueladora', 'Mejorable', sysdate);
+
+execute nueva_revision (1,1, SYSDATE, 'Mensual', 'Positivo', 3);
+execute nueva_revision (2,2, '01/01/2016', 'Mensual', 'Positivo', 4);
+execute nueva_revision (3,2, SYSDATE, 'Por fallos','Negativo', 2);

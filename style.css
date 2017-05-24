@@ -38,6 +38,13 @@ input[type=text]{
 	margin-left: 11.55%;
 }
 
+input[type=submit]{
+	margin-bottom:1%;
+	margin-top: 3%;
+	border-radius: 5%;
+	float: center;
+}
+
 input[type=e-mail]{
 	margin-bottom:1%;
 	display: inline-block;
@@ -45,6 +52,15 @@ input[type=e-mail]{
 	vertical-align: middle;
 	width: 40%;
 	margin-left: 2%;
+}
+
+input[type=password]{
+	margin-bottom:1%;
+	display: inline-block;
+	border-radius: 5%;
+	vertical-align: middle;
+	width: 40%;
+	margin-left: 11.55%;
 }
 
 #formularioContacto{
@@ -58,6 +74,66 @@ input[type=e-mail]{
 
 #areaEscribe{
 	margin-top: 1%;
+}
+
+.textoRegistro{
+	text-align: center;
+	font-family: Georgia;
+	color: white;
+	font-size: 20px;
+	margin: 11.55%;
+}
+
+.topLogin{
+	margin-left: 11.55%;
+	margin-top: 2%;
+	margin-bottom: 3%;
+	margin-right: 10%;
+}
+
+.topLogin h2{
+	color: white;
+	font-family: Georgia;
+	text-decoration: underline;
+	font-size: 30px;
+}
+
+.topLogin p{
+	color: white;
+	font-family: Georgia;
+	font-size: 22px;
+}
+
+.topLogin ul li{
+	color: white;
+	font-family: Georgia;
+	font-size: 18px;
+}
+
+.error h4{
+	text-align: center;
+	color: red;
+	font-family: Georgia;
+	font-size: 18px;
+	text-decoration: underline;
+}
+
+.error p{
+	text-align: center;
+	color: white;
+	font-family: Georgia;
+	font-size: 15px;
+	text-decoration: underline;
+}
+
+.enlaceRedirige{
+	color: white;
+	text-decoration: none;
+}
+
+.enlaceRedirige:hover{
+	color: lightblue;
+	text-decoration: underline;
 }
 
 /* Elementos de menus */
