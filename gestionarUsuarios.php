@@ -16,7 +16,18 @@
 	} catch(PDOException $e) {
 		return false;
 		$e->getMessage();
+		$session;
     }
-}
+ }
+	
+	function consultarClientes($conexion, $email, $password){
+		$consulta = "SELECT COUNT(*) AS TOTAL FROM CLIENTE WHERE CORREOELECTRONICO=:email AND CONTRASEÑA=:password";
+		$stmt = $conexion->prepare($consulta);
+		$stmt->bindParam(':email',$email);
+		$stmt->bindParam(':password',$password);
+		$stmt->execute();
+		return $stmt->fetchColumn();
+	}
+
 
 ?>
