@@ -3,14 +3,13 @@
 
 	require_once("gestionBD.php");
 	require_once("gestionProductos.php");
-	require_once("gestion_datos_producto.php");
 	require_once("consulta_paginada.php");
 	
 	if (isset($_SESSION["producto"])){
 		$producto = $_SESSION["producto"];
 		unset($_SESSION["producto"]);
 	}
-/*
+
 	// ¿Venimos simplemente de cambiar página o de haber seleccionado un registro ?
 	// ¿Hay una sesión activa?
 	if (isset($_SESSION["paginacion"])) $paginacion = $_SESSION["paginacion"];
@@ -23,14 +22,15 @@
 	
 	// Antes de seguir, borramos las variables de sección para no confundirnos más adelante
 	unset($_SESSION["paginacion"]);
-*/
+
 	$conexion = crearConexionBD();
-/*	
+
 		// La consulta que ha de paginarse
-	$query = 'SELECT PRODUCTO.OID_P, MASTERMAT.OID_P, PRODUCTO.NOMBRE, PRODUCTO.PRECIOUNITARIO'
+	$query = 'SELECT PRODUCTO.OID_P, PRODUCTO.NOMBRE, PRODUCTO.PRECIOUNITARIO,'
+		.'PRODUCTO.STOCK, PRODUCTO.OID_UAL, MASTERMAT.CANAL, MASTERMAT.MEDIDAS, MASTERMAT.MATERIAL '
 		.'FROM PRODUCTO, MASTERMAT '
 		.'WHERE '
-			.'PODUCTO.OID_P = MASTERMAT.OID_P '
+			.'PRODUCTO.OID_P = MASTERMAT.OID_P '
 		.'ORDER BY OID_P';
 	
 		// Se comprueba que el tamaño de página, página seleccionada y total de registros son conformes.
@@ -44,8 +44,8 @@
 	$paginacion["PAG_NUM"] = $pagina_seleccionada;
 	$paginacion["PAG_TAM"] = $pag_tam;
 	$_SESSION["paginacion"] = $paginacion;
-*/
-	$filas = consultarTodosProductos($conexion);
+
+	$filas = consulta_paginada($conexion,$query,$pagina_seleccionada,$pag_tam);
 	cerrarConexionBD($conexion);
 ?>
 
@@ -78,16 +78,16 @@
 <main>
 	 <nav>
 		<div id="enlaces">
-			<?php /*
+			<?php 
 				for( $pagina = 1; $pagina <= $total_paginas; $pagina++ )
 					if ( $pagina == $pagina_seleccionada) { 	?>
 						<span class="current"><?php echo $pagina; ?></span>
 			<?php }	else { ?>
 						<a href="muestra_productos.php?PAG_NUM=<?php echo $pagina; ?>&PAG_TAM=<?php echo $pag_tam; ?>"><?php echo $pagina; ?></a>
-			<?php } */?>
+			<?php } ?>
 		</div>
 
-	<?php /*	<form method="get" action="muestra_productos.php">
+		<form method="get" action="muestra_productos.php">
 			<input id="PAG_NUM" name="PAG_NUM" type="hidden" value="<?php echo $pagina_seleccionada?>"/>
 			Mostrando
 			<input id="PAG_TAM" name="PAG_TAM" type="number"
@@ -95,7 +95,7 @@
 				value="<?php echo $pag_tam?>" autofocus="autofocus" />
 			entradas de <?php echo $total_registros?>
 			<input type="submit" value="Cambiar">
-		</form> */ ?>
+		</form>  
 	</nav> 
 		
 	<div class="margenTop">
