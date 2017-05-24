@@ -26,7 +26,7 @@ CREATE TABLE USUARIO_MANTENIMIENTO
 Nombre CHAR(25) not null,
 Apellidos CHAR(25) not null,
 correoElectronico CHAR(50) not null,
-Contraseña CHAR(20) not null,
+pass CHAR(20) not null,
 unique(Nombre));
 
 /* Tabla de máquina. Atributo Tipo no nulo. */
@@ -56,7 +56,7 @@ CREATE TABLE CLIENTE
 Nombre CHAR(25) not null,
 Apellidos CHAR(25) not null,
 correoElectronico CHAR(50) not null,
-Contraseña CHAR(20) not null,
+pass CHAR(20) not null,
 Empresa CHAR(25) not null);
 
 /* Tabla de usuario de administración. Atributo Nombre restringido y no nulo */
@@ -65,7 +65,7 @@ CREATE TABLE USUARIO_ADMINISTRACION
 Nombre CHAR(25) not null,
 Apellidos CHAR(25) not null,
 correoElectronico CHAR(50) not null,
-Contraseña CHAR(20) not null,
+pass CHAR(20) not null,
 unique (Nombre));
 
 /* Tabla de usuario de almacén. Atributo Nombre restringido y no nulo */
@@ -74,7 +74,7 @@ CREATE TABLE USUARIO_ALMACEN
 Nombre CHAR(25) not null,
 Apellidos CHAR(25) not null,
 correoElectronico CHAR(50) not null,
-Contraseña CHAR(20) not null,
+pass CHAR(20) not null,
 unique(Nombre));
 
 /* Tabla de producto. Atributo Nombre restringido. Atributos Nombre, Stock y
