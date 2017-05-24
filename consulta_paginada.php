@@ -18,7 +18,7 @@ function consulta_paginada( $conn, $query, $pag_num, $pag_size )
 		return $stmt;
 	}	
 	catch ( PDOException $e ) {
-		$_SESSION['exception'] = $e->GetMessage();
+		$_SESSION['exception'] = $e->GetMessage()."<p> ERROR EN PAGINADA </p>";
 		header("Location: exception.php");
 	}
 } 
@@ -34,7 +34,7 @@ function total_consulta( $conn, $query )
 		return  $total;
 	}
 	catch ( PDOException $e ) {
-		$_SESSION['exception'] = $e->GetMessage();
+		$_SESSION['exception'] = $e->GetMessage()."<p>ERROR EN TOTAL</p>";
 		header("Location: exception.php");
 	}
 } 
