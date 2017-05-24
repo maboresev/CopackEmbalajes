@@ -134,6 +134,7 @@ input[type=password]{
 .enlaceRedirige:hover{
 	color: lightblue;
 	text-decoration: underline;
+
 }
 
 /* Elementos de menus */
@@ -180,6 +181,27 @@ input[type=password]{
 .menu li:hover a{
 	color: blue;
 	transition: 0.5s;
+}
+
+.enlaces{
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	margin: 0 auto;
+	width: 30%;
+}
+
+.enlaces a:hover{
+	text-decoration: none;
+}
+
+.nocurrent{
+	color: lightblue;
+}
+
+.consultaPaginada{
+	text-align: center;
+	color: white;
 }
 
 /* Imagenes */

@@ -77,17 +77,18 @@
 
 <main>
 	 <nav>
-		<div id="enlaces">
+		<div class="enlaces">
+		<p class="textoGen">Páginas:</p>
 			<?php 
 				for( $pagina = 1; $pagina <= $total_paginas; $pagina++ )
 					if ( $pagina == $pagina_seleccionada) { 	?>
 						<span class="current"><?php echo $pagina; ?></span>
 			<?php }	else { ?>
-						<a href="muestra_productos.php?PAG_NUM=<?php echo $pagina; ?>&PAG_TAM=<?php echo $pag_tam; ?>"><?php echo $pagina; ?></a>
+						<a class="nocurrent" href="muestra_productos.php?PAG_NUM=<?php echo $pagina; ?>&PAG_TAM=<?php echo $pag_tam; ?>"><?php echo $pagina; ?></a>
 			<?php } ?>
 		</div>
 
-		<form method="get" action="muestra_productos.php">
+		<form method="get" action="muestra_productos.php" class="consultaPaginada">
 			<input id="PAG_NUM" name="PAG_NUM" type="hidden" value="<?php echo $pagina_seleccionada?>"/>
 			Mostrando
 			<input id="PAG_TAM" name="PAG_TAM" type="number"
@@ -102,6 +103,7 @@
 	<?php
 		foreach($filas as $fila) {
 	?>
+
 
 	<article class="producto">
 		<form method="get" action="controlador_productos.php">
