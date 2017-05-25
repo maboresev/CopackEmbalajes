@@ -339,3 +339,7 @@ input[type=password]{
 	margin-right:25%;
 	margin-bottom: 0%;
 }
+
+#preciomod{
+	width: 70px;
+}

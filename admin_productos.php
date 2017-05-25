@@ -107,30 +107,31 @@
 		
 	<div class="margenTop">
 	<?php
-		foreach($filas as $fila) {
+		foreach($filas as $fila) {		
 	?>
 
 
 	<article class="producto">
-		<form method="get" action="controlador_productos.php">
+		<form method="post" action="controlador_productos.php">
 			<div class="fila_producto">
 				<div class="datos_producto">		
 					<!-- Controles de los campos que quedan ocultos -->
-					<input type="hidden" id="OID_P" name="OID_P" value="<?php echo $fila["OID_P"]; ?>"/>
+					<input type="hidden" id="OID_P" name="OID_P" value="<?php echo $fila["OID_P"]; ?>"/>
+			
 				<?php
 
 						echo "<p>"."<strong>"."Producto: ".$fila["NOMBRE"]."</strong>".". ";
-						echo "Precio(unidad): 0".$fila["PRECIOUNITARIO"]."€.";
-						if(startsWith($fila["PRECIOUNITARIO"], ',')){
-						} else {
+
+				
 						echo "Precio(unidad): ".$fila["PRECIOUNITARIO"]."€.";
-						}	
+				
 						?>
-							<input id="borrar" name="borrar" type="submit" class="editar_fila" value="borrar">
-							</input>
-						<input id="borrar" name="borrar" type="submit" class="editar_fila" value="borrar">
-							</input>						
-					
+							<input type="text" name="preciomod" id="preciomod"/>Precio
+							<input id="borrar" name="borrar" type="submit" class="editar_fila" value="borrar"></input>
+
+							<input id="editar" name="editar" type="submit" class="editar_fila" value="editar"></input>
+							
+						
 						</p>
 						<h4><?php echo "Material: ".$fila["MATERIAL"].". ";
 						echo "Medidas: ".$fila["MEDIDAS"].". ";
@@ -142,8 +143,7 @@
 				</div>
 				
 			</div>
-		</form>
-		
+		</form>
 	</article>
 
 	<?php } ?>
@@ -155,7 +155,7 @@
 </main>
 
 <?php
-	include_once("pie.php");
+	include_once("pie.php");	
 ?>
 
 </body>

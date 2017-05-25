@@ -9,11 +9,11 @@
 		require_once("gestionProductos.php");
 		
 		$conexion = crearConexionBD();		
-		$excepcion = modificar_precio_producto($conexion,$producto["OID_P"],$producto["PRECIOUNITARIO"]);
+		$excepcion = modificar_precio_producto($conexion,$producto["OID_P"], $_POST["preciomod"]);
 		cerrarConexionBD($conexion);
 			
 		if ($excepcion<>"") {
-			$exception= "El error está en la funcion modificar";
+			$exception= "El error está en la funcion modificar" + $_POST["preciomod"];
 			$_SESSION["exception"] = $exception;
 			$_SESSION["destino"] = "admin_productos.php";
 			Header("Location: exception.php");
