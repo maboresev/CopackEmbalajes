@@ -84,11 +84,11 @@
 					if ( $pagina == $pagina_seleccionada) { 	?>
 						<span class="current"><?php echo $pagina; ?></span>
 			<?php }	else { ?>
-						<a class="nocurrent" href="muestra_productos.php?PAG_NUM=<?php echo $pagina; ?>&PAG_TAM=<?php echo $pag_tam; ?>"><?php echo $pagina; ?></a>
+						<a class="nocurrent" href="admin_productos.php?PAG_NUM=<?php echo $pagina; ?>&PAG_TAM=<?php echo $pag_tam; ?>"><?php echo $pagina; ?></a>
 			<?php } ?>
 		</div>
 
-		<form method="get" action="muestra_productos.php" class="consultaPaginada">
+		<form method="get" action="admin_productos.php" class="consultaPaginada">
 			<input id="PAG_NUM" name="PAG_NUM" type="hidden" value="<?php echo $pagina_seleccionada?>"/>
 			Mostrando
 			<input id="PAG_TAM" name="PAG_TAM" type="number"
@@ -115,9 +115,9 @@
 						echo "<p>"."<strong>"."Producto: ".$fila["NOMBRE"]."</strong>".". ";
 						echo "Precio(unidad): ".$fila["PRECIOUNITARIO"]."€.";
 						?>
-							<input id="editar" name="editar" type="submit" class="editar_fila" value="editar">
-							</input>
 							<input id="borrar" name="borrar" type="submit" class="editar_fila" value="borrar">
+							</input>
+							<input id="editar" name="editar" type="button" class="editar_fila" value="editar" onclick=" location.href='editar_producto.php' ">
 							</input>
 						</p>
 						<h4><?php echo "Material: ".$fila["MATERIAL"].". ";

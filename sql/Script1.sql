@@ -104,7 +104,7 @@ CREATE TABLE LINEA_DE_PEDIDO
 Num_pedido NUMBER(8),
 OID_P NUMBER (8),
 CantidadPedida NUMBER(10) not null CHECK (CantidadPedida > 299),
-FOREIGN KEY (OID_P) REFERENCES PRODUCTO ON DELETE cascade,
+FOREIGN KEY (OID_P) REFERENCES PRODUCTO ON DELETE set null,
 FOREIGN KEY (Num_pedido) REFERENCES PEDIDO ON DELETE set null);
 
 /* Tabla de factura. Atributos Precio e IVA no nulos. Referencias a las tablas

@@ -19,7 +19,9 @@
 			header("location:admin_productos.php");
 		}
 		else{
+			$exception="El producto que intenta borrar referencia alguna línea de factura o de pedido abierta.";
 			$_SESSION["exception"]=$exception;
+			$_SESSION["destino"] = "admin_productos.php";
 			header("location:exception.php");
 		}
 		// SI LA FUNCIÓN RETORNÓ UN MENSAJE DE EXCEPCIÓN, ENTONCES REDIRIGIR A "EXCEPCION.PHP"
