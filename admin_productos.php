@@ -112,21 +112,22 @@
 					<!-- Controles de los campos que quedan ocultos -->
 					<input type="hidden" id="OID_P" name="OID_P" value="<?php echo $fila["OID_P"]; ?>"/>
 				<?php
-						echo "<p>"."<strong>"."Producto: ".$fila["NOMBRE"]."</strong>".". ";
-						echo "Precio(unidad): ".$fila["PRECIOUNITARIO"]."€.";
-						?>
-							<input id="borrar" name="borrar" type="submit" class="editar_fila" value="borrar">
+						echo "<p>"."<strong>"."Producto: ".$fila["NOMBRE"]."</strong>".". ";?>
+						<input type="text" id="PRECIO" name="PRECIO" value=<?php echo $fila["PRECIOUNITARIO"]; ?>" /> 
+							
+						<input id="grabar" name="grabar" type="submit" class="editar_fila" value="grabar">
 							</input>
-							<input id="editar" name="editar" type="button" class="editar_fila" value="editar" onclick=" location.href='editar_producto.php' ">
-							</input>
+						<input id="borrar" name="borrar" type="submit" class="editar_fila" value="borrar">
+							</input>						
+					
 						</p>
 						<h4><?php echo "Material: ".$fila["MATERIAL"].". ";
 						echo "Medidas: ".$fila["MEDIDAS"].". ";
 						echo "Canal: ".$fila["CANAL"].". ";
-						echo "Stock en almacén: ".$fila["STOCK"].". "; ?>
+						echo "Stock: ".$fila["STOCK"].".";?>
+						
 						</h4>
-						<!-- mostrando título -->						
-					
+						
 				</div>
 				
 			</div>
