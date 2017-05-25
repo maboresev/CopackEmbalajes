@@ -78,5 +78,6 @@ execute nueva_revision (1,1, SYSDATE, 'Mensual', 'Positivo', 3);
 execute nueva_revision (2,2, '01/01/2016', 'Mensual', 'Positivo', 4);
 execute nueva_revision (3,2, SYSDATE, 'Por fallos','Negativo', 2);
 
-/* Borrado de datos */
+/* Borrado de datos 
 execute quitar_producto(1001);
+*/

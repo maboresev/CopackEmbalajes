@@ -60,7 +60,7 @@
   <script>
 	$(document).ready(function(){
 		$("h4").hide();
-		$("#borrar").click(function(){
+		$("button").click(function(){
 			$("h4").toggle();
 		});
 	});
@@ -112,15 +112,13 @@
 					<!-- Controles de los campos que quedan ocultos -->
 					<input type="hidden" id="OID_P" name="OID_P" value="<?php echo $fila["OID_P"]; ?>"/>
 				<?php
-					if (isset($producto)&&($producto["OID_P"] == $fila["OID_P"])) { ?>
-						<!-- Editando título -->
-						<input type="text" id="NOMBRE" name="NOMBRE" value=<?php echo $fila["NOMBRE"]; ?>" />
-						<?php	echo "Precio ".$fila["PRECIOUNITARIO"];	?>
-						
-						<?php }	else { 
 						echo "<p>"."<strong>"."Producto: ".$fila["NOMBRE"]."</strong>".". ";
 						echo "Precio(unidad): ".$fila["PRECIOUNITARIO"]."€.";
 						?>
+							<input id="editar" name="editar" type="submit" class="editar_fila" value="editar">
+							</input>
+							<input id="borrar" name="borrar" type="submit" class="editar_fila" value="borrar">
+							</input>
 						</p>
 						<h4><?php echo "Material: ".$fila["MATERIAL"].". ";
 						echo "Medidas: ".$fila["MEDIDAS"].". ";
@@ -128,21 +126,9 @@
 						echo "Stock en almacén: ".$fila["STOCK"].". "; ?>
 						</h4>
 						<!-- mostrando título -->						
-				<?php } ?>
-
+					
 				</div>
-				<div id="botones_fila">
-				<?php if (isset($libro)&&($libro["OID_LIBRO"] == $fila["OID_LIBRO"])) { ?>
-						<button id="grabar" name="grabar" type="submit" class="editar_fila">
-						Grabar</button>
-				<?php } else {?>
-						<button id="editar" name="editar" type="submit" class="editar_fila">Editar
-						</button>
-				<?php } ?>
-					<button id="borrar" name="borrar" type="submit" class="editar_fila">
-						borrar
-					</button>
-				</div>
+				
 			</div>
 		</form>
 		

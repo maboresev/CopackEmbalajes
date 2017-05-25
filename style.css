@@ -298,8 +298,8 @@ input[type=password]{
 	margin-left: 2%;
 }
 
-.botones_fila{
- width:25%;
+.editar_fila{
+ width:5%;
  float:right;
 }
 
@@ -307,14 +307,6 @@ input[type=password]{
 	float:center;
 	width: 3%;
 	margin-left: 47%;
-}
-
-#editar{
-	 float:right;
-}
-
-#borrar{
-	 float:right;
 }
 
 .info{

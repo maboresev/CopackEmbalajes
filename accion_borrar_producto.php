@@ -16,7 +16,7 @@
 		// CERRAR LA CONEXIÓN
 		
 		if($excepcion == ""){
-			header("location:muestra_productos.php");
+			header("location:admin_productos.php");
 		}
 		else{
 			$_SESSION["exception"]=$exception;
