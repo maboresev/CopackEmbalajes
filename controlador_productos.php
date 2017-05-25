@@ -11,7 +11,6 @@
 			$producto["MATERIAL"]=$_REQUEST["MATERIAL"];
 			$producto["MEDIDAS"]=$_REQUEST["MEDIDAS"];
 			$producto["CANAL"]=$_REQUEST["CANAL"];
-			$preciomod = $_POST["preciomod"];
 
 		
 		$_SESSION["PRODUCTO"]=$producto;
@@ -24,4 +23,5 @@
 		else{
 			header("location:muestra_productos.php");
 		}
-?>
+
+

@@ -125,10 +125,8 @@
 				
 						echo "Precio(unidad): ".$fila["PRECIOUNITARIO"]."€.";
 				
-						?>
-							<input type="text" name="preciomod" id="preciomod"/>Precio
+						?>
 							<input id="borrar" name="borrar" type="submit" class="editar_fila" value="borrar"></input>
-
 							<input id="editar" name="editar" type="submit" class="editar_fila" value="editar"></input>
 							
 						
