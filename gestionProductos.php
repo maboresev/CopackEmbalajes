@@ -8,10 +8,10 @@
 	}
 
 
-function quitar_producto($conexion,$OidP) {
+function quitar_producto($conexion,$oidp) {
 	try {
-		$stmt=$conexion->prepare('CALL QUITAR_PRODUCTO(:OidP)');
-		$stmt->bindParam(':OidP',$OidP);
+		$stmt=$conexion->prepare('CALL QUITAR_PRODUCTO(:oidp)');
+		$stmt->bindParam(':oidp',$oidp);
 		$stmt->execute();
 		return "";
 	} catch(PDOException $e) {
@@ -19,9 +19,33 @@ function quitar_producto($conexion,$OidP) {
     }
 }
 
-function modificar_producto($conexion,$OidP,$NuevoProducto) {
+function modificar_stock($conexion,$OidP,$NuevoProducto) {
 	try {
-		$stmt=$conexion->prepare('CALL MODIFICAR_PRODUCTO(:OidP,:NuevoProducto)');
+		$stmt=$conexion->prepare('CALL ACTUALIZA_STOCK(:OidP,:NuevoProducto)');
+		$stmt->bindParam(':OidP',$OidP);
+		$stmt->bindParam(':NuevoProducto',$NuevoProducto);
+		$stmt->execute();
+		return "";
+	} catch(PDOException $e) {
+		return $e->getMessage();
+    }
+}
+
+function modificar_precio_producto($conexion,$OidP,$NuevoProducto) {
+	try {
+		$stmt=$conexion->prepare('CALL ACTUALIZA_PRECIO_PRODUCTO(:OidP,:NuevoProducto)');
+		$stmt->bindParam(':OidP',$OidP);
+		$stmt->bindParam(':NuevoProducto',$NuevoProducto);
+		$stmt->execute();
+		return "";
+	} catch(PDOException $e) {
+		return $e->getMessage();
+    }
+}
+
+function modificar_master($conexion,$OidP,$NuevoProducto) {
+	try {
+		$stmt=$conexion->prepare('CALL ACTUALIZA_MASTER_PRODUCTO(:OidP,:NuevoProducto)');
 		$stmt->bindParam(':OidP',$OidP);
 		$stmt->bindParam(':NuevoProducto',$NuevoProducto);
 		$stmt->execute();

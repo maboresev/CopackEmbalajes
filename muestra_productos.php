@@ -111,13 +111,8 @@
 				<div class="datos_producto">		
 					<!-- Controles de los campos que quedan ocultos -->
 					<input type="hidden" id="OID_P" name="OID_P" value="<?php echo $fila["OID_P"]; ?>"/>
-				<?php
-					if (isset($producto)&&($producto["OID_P"] == $fila["OID_P"])) { ?>
-						<!-- Editando título -->
-						<input type="text" id="NOMBRE" name="NOMBRE" value=<?php echo $fila["NOMBRE"]; ?>" />
-						<?php	echo "Precio ".$fila["PRECIOUNITARIO"];	?>
 						
-						<?php }	else { 
+						<?php  
 						echo "<p>"."<strong>"."Producto: ".$fila["NOMBRE"]."</strong>".". ";
 						echo "Precio(unidad): ".$fila["PRECIOUNITARIO"]."€.";
 						?>
@@ -127,8 +122,7 @@
 						echo "Canal: ".$fila["CANAL"].". ";
 						echo "Stock en almacén: ".$fila["STOCK"].". "; ?>
 						</h4>
-						<!-- mostrando título -->						
-				<?php } ?>
+						<!-- mostrando título -->	
 
 				</div>
 				

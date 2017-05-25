@@ -83,3 +83,12 @@ END nueva_factura;
 
 /
 
+/* Borrado de productos */
+CREATE OR REPLACE PROCEDURE quitar_producto
+  (oidp IN PRODUCTO.OID_P%TYPE) IS
+BEGIN
+  DELETE from PRODUCTO
+  where OID_P = oidp;
+END quitar_producto;
+
+
