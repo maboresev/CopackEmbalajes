@@ -9,7 +9,7 @@
 <body>
 
 <?php
-	include_once("cabecera.php");
+	include_once("cabecera_cliente.php");
 	include_once("menu_cliente.php");
 ?>
 

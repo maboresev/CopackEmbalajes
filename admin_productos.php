@@ -71,7 +71,7 @@
 <body>
 
 <?php
-	include_once("cabecera.php");
+	include_once("cabecera_adm.php");
 	include_once("menu_adm.php");
 ?>
 
