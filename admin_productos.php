@@ -5,6 +5,12 @@
 	require_once("gestionProductos.php");
 	require_once("consulta_paginada.php");
 	
+	function startsWith($string, $param)
+	{
+     $length = strlen($param);
+     return (substr($string, 0, $length) === $param);
+	}
+	
 	if (isset($_SESSION["producto"])){
 		$producto = $_SESSION["producto"];
 		unset($_SESSION["producto"]);
@@ -112,8 +118,13 @@
 					<!-- Controles de los campos que quedan ocultos -->
 					<input type="hidden" id="OID_P" name="OID_P" value="<?php echo $fila["OID_P"]; ?>"/>
 				<?php
+
 						echo "<p>"."<strong>"."Producto: ".$fila["NOMBRE"]."</strong>".". ";
+						if(startsWith($fila["PRECIOUNITARIO"], ',')){
+						echo "Precio(unidad): 0".$fila["PRECIOUNITARIO"]."€.";
+						} else {
 						echo "Precio(unidad): ".$fila["PRECIOUNITARIO"]."€.";
+						}	
 						?>
 							<input id="borrar" name="borrar" type="submit" class="editar_fila" value="borrar">
 							</input>
