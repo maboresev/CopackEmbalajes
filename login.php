@@ -18,7 +18,7 @@
 			if($numero_usuarios == 0)
 				$login = "error";
 			else {
-				$_SESSION['login'] = $email;
+				$_SESSION['logincliente'] = $email;
 				Header("Location: index_cliente.php");
 			}
 		
@@ -30,7 +30,7 @@
 			if($numero_usuarios == 0)
 				$login = "error";
 			else {
-				$_SESSION['login'] = $email;
+				$_SESSION['loginadm'] = $email;
 				Header("Location: index_adm.php");
 			}
 			
@@ -42,7 +42,7 @@
 			if($numero_usuarios == 0)
 				$login = "error";
 			else {
-				$_SESSION['login'] = $email;
+				$_SESSION['loginalm'] = $email;
 				Header("Location: index_almacen.php");
 			}
 		
@@ -54,7 +54,7 @@
 			if($numero_usuarios == 0)
 				$login = "error";
 			else {
-				$_SESSION['login'] = $email;
+				$_SESSION['loginmant'] = $email;
 				Header("Location: index_mantenimiento.php");
 			}
 		
