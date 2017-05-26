@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['loginalm'])){
+	Header("Location: login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,7 +14,9 @@
 
 <body>
 <main>
-
+	<form method="post" action="logout.php">
+	<input type="submit" name="logout" value="Log out"></button>
+	</form>
 	<ul class="menu" id="menuPrincipal">
 		<li id="elementoMenu"><a id="linkMenu" href="almacen.php">Almacén</a></li>
 	

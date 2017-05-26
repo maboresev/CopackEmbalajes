@@ -14,11 +14,12 @@
 			$conexion = crearConexionBD();
 			$numero_usuarios = consultarClientes($conexion, $email, $password);
 			cerrarConexionBD($conexion);
-	
-			if($numero_usuarios == 0)
+
+			if($numero_usuarios == 0){
 				$login = "error";
-			else {
 				$_SESSION['logincliente'] = $email;
+
+			}else {
 				Header("Location: index_cliente.php");
 			}
 		
