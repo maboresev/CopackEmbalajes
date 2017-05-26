@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 if(!isset($_SESSION['logincliente'])){
 	Header("Location: login.php");
 }
