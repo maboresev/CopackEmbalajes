@@ -27,13 +27,13 @@
 		// La consulta que ha de paginarse
 	$query = 'select PEDIDO.NUM_PEDIDO, PEDIDO.FECHA_PEDIDO,
 PRODUCTO.OID_P, PEDIDO.OID_C, PRODUCTO.NOMBRE,
-PRODUCTO.PRECIOUNITARIO, LINEA_DE_PEDIDO.CANTIDADPEDIDA
+PRODUCTO.PRECIOUNITARIO, LINEA_DE_PEDIDO.CANTIDADPEDIDA,
+CLIENTE.CORREOELECTRONICO
 
-
-from LINEA_DE_PEDIDO, PEDIDO, PRODUCTO
+from LINEA_DE_PEDIDO, PEDIDO, PRODUCTO, CLIENTE
 
 where LINEA_DE_PEDIDO.NUM_PEDIDO = PEDIDO.NUM_PEDIDO and
-LINEA_DE_PEDIDO.OID_P = PRODUCTO.OID_P
+LINEA_DE_PEDIDO.OID_P = PRODUCTO.OID_P and CLIENTE.OID_C = PEDIDO.OID_C
 
 ORDER BY PEDIDO.NUM_PEDIDO';
 	
@@ -51,6 +51,7 @@ ORDER BY PEDIDO.NUM_PEDIDO';
 
 	$filas = consulta_paginada($conexion,$query,$pagina_seleccionada,$pag_tam);
 	cerrarConexionBD($conexion);
+	$email = $_SESSION["logincliente"];
 ?>
 
 <!DOCTYPE html>
@@ -77,7 +78,7 @@ ORDER BY PEDIDO.NUM_PEDIDO';
 					if ( $pagina == $pagina_seleccionada) { 	?>
 						<span class="current"><?php echo $pagina; ?></span>
 			<?php }	else { ?>
-						<a class="nocurrent" href="muestra_productos_cliente.php?PAG_NUM=<?php echo $pagina; ?>&PAG_TAM=<?php echo $pag_tam; ?>"><?php echo $pagina; ?></a>
+						<a class="nocurrent" href="mis_pedidos.php?PAG_NUM=<?php echo $pagina; ?>&PAG_TAM=<?php echo $pag_tam; ?>"><?php echo $pagina; ?></a>
 			<?php } ?>
 		</div>
 
@@ -106,8 +107,10 @@ ORDER BY PEDIDO.NUM_PEDIDO';
 					<input type="hidden" id="OID_C" name="OID_C" value="<?php echo $fila["OID_C"]; ?>"/>
 						
 						<?php  
+						if($email == $fila["CORREOELECTRONICO"]){
 						echo "<p>"."<strong>"."Pedido: ".$fila["NUM_PEDIDO"]."</strong>".". ";
 						echo "Fecha: ".$fila["FECHA_PEDIDO"];
+						}
 						?>
 						</p>
 						<!-- mostrando título -->	
