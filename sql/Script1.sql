@@ -95,6 +95,7 @@ CREATE TABLE PEDIDO
 (Num_pedido NUMBER(8) PRIMARY KEY,
 Fecha_pedido DATE not null,
 OID_C NUMBER(5),
+Carrito VARCHAR2(2),
 FOREIGN KEY (OID_C) REFERENCES CLIENTE ON DELETE set null);
 
 /* Tabla de líneas de pedido. Atributo CantidadPedida no nulo. Referencias a las

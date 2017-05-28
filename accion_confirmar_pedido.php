@@ -1,6 +1,5 @@
 <?php	
 	session_start();	
-	if(isset($_POST["submit"])){
 	if (isset($_SESSION["PEDIDO"])) {
 		$pedido = $_SESSION["PEDIDO"];
 		unset($_SESSION["pedido"]);
@@ -22,6 +21,5 @@
 			Header("Location: carrito.php");
 		
 	} 
-	else Header("Location: carrito.php"); // Se ha tratado de acceder directamente a este PHP
-	}
+
 ?>

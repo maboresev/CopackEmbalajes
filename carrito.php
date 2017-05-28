@@ -14,7 +14,7 @@ session_start();
 	$conexion = crearConexionBD();
 
 		// La consulta que ha de paginarse
-	$pquery = "select PEDIDO.NUM_PEDIDO, CLIENTE.CORREOELECTRONICO
+	$pquery = "select PEDIDO.NUM_PEDIDO, CLIENTE.CORREOELECTRONICO, PEDIDO.CARRITO
 				from PEDIDO, CLIENTE
 				where PEDIDO.OID_C = CLIENTE.OID_C
 				ORDER BY NUM_PEDIDO";
@@ -63,7 +63,7 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 						echo "<ul>";
 						foreach($pedidos as $pedido){
 							
-							if($email == $pedido["CORREOELECTRONICO"]){
+							if($email == $pedido["CORREOELECTRONICO"] && $pedido["CARRITO"] == "SI" ){
 								?>
 								<li>
 								

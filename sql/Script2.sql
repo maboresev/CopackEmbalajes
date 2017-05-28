@@ -304,8 +304,8 @@ END actualiza_cantidad_linea;
 /
 
 CREATE OR REPLACE PROCEDURE actualiza_pedido_carrito
-  (r_numped IN PEDIDO.NUM_PEDIDO,
-  w_carrito IN PEDIDO.CARRITO) IS
+  (r_numped IN PEDIDO.NUM_PEDIDO%TYPE,
+  w_carrito IN PEDIDO.CARRITO%TYPE) IS
   BEGIN
   UPDATE PEDIDO SET CARRITO = w_carrito
   WHERE NUM_PEDIDO = r_numped;

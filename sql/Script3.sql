@@ -91,4 +91,22 @@ BEGIN
   where OID_P = oidp;
 END quitar_producto;
 
+/
+
+CREATE OR REPLACE PROCEDURE quitar_lineas_pedido
+  (numpedido IN LINEA_DE_PEDIDO.NUM_PEDIDO%TYPE) IS
+  BEGIN
+  DELETE from LINEA_DE_PEDIDO
+  where NUM_PEDIDO = numpedido;
+END quitar_lineas_pedido;
+
+/
+
+CREATE OR REPLACE PROCEDURE quitar_pedido
+  (numpedido IN PEDIDO.NUM_PEDIDO%TYPE) IS
+  BEGIN
+  DELETE from PEDIDO
+  where NUM_PEDIDO = numpedido;
+END quitar_pedido;
+
 
