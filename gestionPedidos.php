@@ -35,4 +35,17 @@ function quitar_pedido($conexion,$NUMPEDIDO) {
     }
 }
 
+function nuevo_pedido($conexion,$NUMPEDIDO, $oid_c, $carrito) {
+	try {
+		$stmt=$conexion->prepare('CALL inserta_pedido(:numpedido, :oid_c, :carrito)');
+		$stmt->bindParam(':numpedido',$NUMPEDIDO);
+		$stmt->bindParam(':oid_c',$oid_c);
+		$stmt->bindParam(':carrito',$carrito);
+		$stmt->execute();
+		return "";
+	} catch(PDOException $e) {
+		return $e->getMessage();
+    }
+}
+
 ?>

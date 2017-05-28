@@ -12,7 +12,8 @@ session_start();
 	// ¿Hay una sesión activa?
 	$email = $_SESSION["logincliente"];
 	$conexion = crearConexionBD();
-
+	$cquery = "select CLIENTE.OID_C, CLIENTE.CORREOELECTRONICO
+				from CLIENTE";
 		// La consulta que ha de paginarse
 	$pquery = "select PEDIDO.NUM_PEDIDO, CLIENTE.CORREOELECTRONICO, PEDIDO.CARRITO
 				from PEDIDO, CLIENTE
@@ -34,6 +35,7 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 
 	$lineas= $conexion->query($lpquery);
 	$pedidos= $conexion->query($pquery);
+	$clientes= $conexion->query($cquery);
 	cerrarConexionBD($conexion);
 ?>
 
@@ -60,6 +62,15 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 
 	<?php
 						echo "Tus pedidos en carrito: ";
+						foreach ($clientes as $cliente){
+						if($email == $cliente["CORREOELECTRONICO"]){
+						?> 
+						<input type="hidden" id="OID_C" name="OID_C" value="<?php echo $cliente["OID_C"]; ?>"/>
+						<?php
+						echo '<input id="nuevo_pedido" name="nuevo_pedido" type="submit" class="nuevo_pedido" value="Crear pedido"></input>';
+					
+						}
+						}
 						echo "<ul>";
 						foreach($pedidos as $pedido){
 							
