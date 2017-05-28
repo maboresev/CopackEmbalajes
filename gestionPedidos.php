@@ -48,4 +48,18 @@ function nuevo_pedido($conexion,$NUMPEDIDO, $oid_c, $carrito) {
     }
 }
 
+function añadir_carrito($conexion,$NUMPEDIDO, $oid_p, $cantidad) {
+	try {
+		$stmt=$conexion->prepare('CALL inserta_linea_pedido(:numpedido, :oid_p, :cantidad)');
+		$stmt->bindParam(':numpedido',$NUMPEDIDO);
+		$stmt->bindParam(':oid_p',$oid_p);
+		$stmt->bindParam(':cantidad',$cantidad);
+		$stmt->execute();
+		return "";
+	} catch(PDOException $e) {
+		return $e->getMessage();
+    }
+}
+
+
 ?>

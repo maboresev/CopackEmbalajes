@@ -106,7 +106,7 @@
 
 
 	<article class="producto">
-		<form method="get" action="controlador_productos.php">
+		<form method="post" action="controlador_pedidos.php">
 			<div class="fila_producto">
 				<div class="datos_producto">		
 					<!-- Controles de los campos que quedan ocultos -->
@@ -115,6 +115,7 @@
 						<?php  
 						echo "<p>"."<strong>"."Producto: ".$fila["NOMBRE"]."</strong>".". ";
 						echo "Precio(unidad): ".$fila["PRECIOUNITARIO"]."€.";
+						echo '<input id="añadir_carrito" name="añadir_carrito" type="submit" class="añadir_carrito" value="Añadir al carrito"></input>';
 						?>
 						</p>
 						<h4><?php echo "Material: ".$fila["MATERIAL"].". ";
