@@ -46,7 +46,7 @@
 				Header("Location: index_almacen.php");
 			}
 		
-		case 'mant':
+/*		case 'mant':
 			$conexion = crearConexionBD();
 			$numero_usuarios = consultarMantenimiento($conexion, $email, $password);
 			cerrarConexionBD($conexion);
@@ -56,7 +56,7 @@
 			else {
 				$_SESSION['loginmant'] = $email;
 				Header("Location: index_mantenimiento.php");
-			}
+			}*/
 		
 		
 		
@@ -90,7 +90,8 @@
 		<input type="radio" name="tipousuario" value="cliente" checked> Cliente
 		<input type="radio" name="tipousuario" value="adm"> Administración
 		<input type="radio" name="tipousuario" value="alm"> Almacén
-		<input type="radio" name="tipousuario" value="mant"> Mantenimiento<br>
+		<?php /*<input type="radio" name="tipousuario" value="mant"> Mantenimiento<br>*/
+		?>
 		<button type="submit" name="submit" value="submit">Log in</button>
 		 
 		<a href="register.php">Regístrate</a>

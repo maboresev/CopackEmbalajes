@@ -16,7 +16,7 @@
 <main>
 
 	<div>
-		<p class="textoGen"> Bienvenido a la web (Formatos provisionales para accesos a pruebas) </p>
+		<p class="textoGen"> Bienvenido a Copack, tu empresa de embalajes en la provincia de Sevilla </p>
 	</div>
 </main>
 

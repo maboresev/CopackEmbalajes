@@ -18,7 +18,7 @@ if(!isset($_SESSION['loginalm'])){
 	<input type="submit" name="logout" value="Log out"></button>
 	</form>
 	<ul class="menu" id="menuPrincipal">
-		<li id="elementoMenu"><a id="linkMenu" href="almacen.php">Almacén</a></li>
+		<li id="elementoMenu"><a id="linkMenu" href="almacen.php">Gestión del stock en almacén</a></li>
 	
 	</ul>
 

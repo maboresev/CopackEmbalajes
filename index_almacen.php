@@ -16,7 +16,7 @@
 <main>
 
 	<div>
-		<p class="textoGen"> Almacén </p>
+		<p class="textoGen"> Bienvenido a la gestión del almacén </p>
 	</div>
 </main>
 

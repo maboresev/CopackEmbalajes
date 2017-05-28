@@ -38,7 +38,7 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <title> Cliente </title>
+  <title> Gestión de pedidos </title>
 </head>
 
 <body>
@@ -59,13 +59,13 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 								
 
 									if(!in_array($linea["NUM_PEDIDO"],$pedidos)){
-									echo "<p>"."<strong>"."Pedido: ".$linea["NUM_PEDIDO"]."</strong>".". ";
+									echo "<p class='textoCli'>"."<strong>"."Pedido: ".$linea["NUM_PEDIDO"]."</strong>".". ";
 									
 
 									array_push($pedidos, $linea["NUM_PEDIDO"]);	
 									}
 									
-									echo "<p>"."<strong>".$linea["NOMBRE"].": ".$linea["CANTIDADPEDIDA"]." unidades"."</strong>".". "."</p>"; 
+									echo "<p class='textoCli'>".$linea["NOMBRE"].": ".$linea["CANTIDADPEDIDA"]." unidades"." ."."</p>"; 
 								
 						}
 ?>
