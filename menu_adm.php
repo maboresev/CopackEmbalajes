@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <title> Sobre nosotros </title>
+  <title> Menu Administracion </title>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
 	<ul class="menu" id="menuPrincipal">
 		<li id="elementoMenu"><a id="linkMenu" href="admin_productos.php" target>Administrar productos</a></li>
 		<li id="elementoMenu"><a id="linkMenu" href="gestion_pedidos.php">Gestión de pedidos</a></li>
-		<li id="elementoMenu"><a id="linkMenu" href="gestion_maquinaria.php">Gestión de maquinaria</a></li>
+		<li id="elementoMenu"><a id="linkMenu" href="alta_producto.php">Alta productos</a></li>
 	</ul>
 	
 </main>

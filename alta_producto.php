@@ -1,3 +1,22 @@
+<?php
+	session_start();
+
+	// Si no existen datos del formulario en la sesión, se crea una entrada con valores por defecto
+	if (!isset($_SESSION['formulario'])) {
+		$formulario['nombre'] = "";
+		$formulario['precio'] = "";
+		$_SESSION['formulario'] = $formulario;
+	}
+	// Si ya existían valores, los cogemos para inicializar el formulario
+	else
+		$formulario = $_SESSION['formulario'];
+			
+	// Si hay errores de validación, hay que mostrarlos y marcar los campos (El estilo viene dado y ya se explicará)
+	if (isset($_SESSION["errores"]))
+		$errores = $_SESSION["errores"];
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -39,7 +58,7 @@
 					<input type="number" name="precio" required><br><label>
 					<input type="hidden" name="oid_ual" value="<?php echo $_SESSION['OID_UAL'];?>"><br><label>
 				<div id="registrar">
-					<input name="Registrar" type="submit" value = "registrar">
+					<input name="altaProducto" type="submit" value = "altaProducto">
 				</div>
 			</form>
 		</div>

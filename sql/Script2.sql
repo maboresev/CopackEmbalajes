@@ -243,10 +243,9 @@ END actualiza_resultado_revision;
 ** modifica el stock queda registrado hasta que se sobreescribe). */
 CREATE OR REPLACE PROCEDURE actualiza_stock
   (r_oid IN PRODUCTO.OID_P%TYPE,
-   w_stock IN PRODUCTO.STOCK%TYPE,
-   w_usuario IN PRODUCTO.OID_UAL%TYPE) IS
+   w_stock IN PRODUCTO.STOCK%TYPE) IS
   BEGIN
-  UPDATE PRODUCTO SET STOCK = w_stock, OID_UAL = w_usuario
+  UPDATE PRODUCTO SET STOCK = w_stock
     WHERE OID_P = r_oid;
   COMMIT WORK;
 END actualiza_stock;

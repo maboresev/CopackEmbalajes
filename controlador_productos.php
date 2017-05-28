@@ -17,6 +17,8 @@
 		
 		if (isset($_REQUEST["editar"])) Header("Location: accion_modificar_producto.php"); 
 		else if (isset($_REQUEST["grabar"])) Header("Location: accion_modificar_producto.php");
+		else if (isset($_REQUEST["stock"])) Header("Location: accion_modificar_stock.php");
+		else if(isset($_REQUEST['altaProducto'])) Header("Location: accion_alta_producto.php");
 		else if (isset($_REQUEST["borrar"]))  Header("Location: accion_borrar_producto.php"); 
 
 		}

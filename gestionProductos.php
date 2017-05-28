@@ -54,4 +54,24 @@ function modificar_master($conexion,$OidP,$NuevoProducto) {
 		return $e->getMessage();
     }
 }
+
+ function alta_producto($conexion,$producto) {
+
+	try {
+		$consulta = "CALL NUEVO_PRODUCTO(:oidp, :nombre, :apellidos, :stock, :preciounitario, :oid_ual)";
+		$stmt=$conexion->prepare($consulta);
+		$stmt->bindParam(':oidp',$producto["oidp"]);
+		$stmt->bindParam(':nombre',$producto["nombre"]);
+		$stmt->bindParam(':stock',$usuario["stock"]);
+		$stmt->bindParam(':precio',$usuario["precio"]);
+		$stmt->bindParam(':oid_ual',$usuario["oid_ual"]);
+		$stmt->execute();
+		return true;
+	} catch(PDOException $e) {
+		return false;
+		$e->getMessage();
+		$session;
+    }
+ }
+
 ?>

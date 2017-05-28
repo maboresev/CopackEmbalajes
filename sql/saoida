@@ -46,35 +46,30 @@ Procedimiento PL/SQL terminado correctamente.
 Procedimiento PL/SQL terminado correctamente.
 Procedimiento PL/SQL terminado correctamente.
 Procedimiento PL/SQL terminado correctamente.
-Error que empieza en la línea: 67 del comando :
-execute inserta_linea_factura('340000', '1002', '500', '0', '0', '0', '0')
-Informe de error -
-ORA-06550: line 1, column 7:
-PLS-00306: wrong number or types of arguments in call to 'INSERTA_LINEA_FACTURA'
-ORA-06550: line 1, column 7:
-PL/SQL: Statement ignored
-06550. 00000 -  "line %s, column %s:\n%s"
-*Cause:    Usually a PL/SQL compilation error.
-*Action:
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
 
-Error que empieza en la línea: 68 del comando :
-execute inserta_linea_factura('340000', '1005', '1000', '0', '0', '0', '0')
+Error que empieza en la línea: 74 del comando :
+execute nueva_maquina (2, 'Troqueladora', 'Buena', '01/01/2018')
 Informe de error -
-ORA-06550: line 1, column 7:
-PLS-00306: wrong number or types of arguments in call to 'INSERTA_LINEA_FACTURA'
-ORA-06550: line 1, column 7:
-PL/SQL: Statement ignored
-06550. 00000 -  "line %s, column %s:\n%s"
-*Cause:    Usually a PL/SQL compilation error.
-*Action:
+ORA-20600: Fecha de compra no aceptada
+ORA-06512: at "IISSI.FECHA_COMPRA_MAQUINA", line 3
+ORA-04088: error during execution of trigger 'IISSI.FECHA_COMPRA_MAQUINA'
+ORA-06512: at "IISSI.NUEVA_MAQUINA", line 7
+ORA-06512: at line 1
 
-Error que empieza en la línea: 69 del comando :
-execute inserta_linea_factura('340000', '1011', '300', '5', '55', '0', '0')
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+
+Error que empieza en la línea: 78 del comando :
+execute nueva_revision (2,2, '01/01/2016', 'Mensual', 'Positivo', 4)
 Informe de error -
-ORA-06550: line 1, column 7:
-PLS-00306: wrong number or types of arguments in call to 'INSERTA_LINEA_FACTURA'
-ORA-06550: line 1, column 7:
-PL/SQL: Statement ignored
-06550. 00000 -  "line %s, column %s:\n%s"
-*Cause:    Usually a PL/SQL compilation error.
-*Action:
+ORA-20600: Fecha de revisión no aceptada
+ORA-06512: at "IISSI.FECHA_REVISION", line 3
+ORA-04088: error during execution of trigger 'IISSI.FECHA_REVISION'
+ORA-06512: at "IISSI.NUEVA_REVISION", line 9
+ORA-06512: at line 1
+
+Procedimiento PL/SQL terminado correctamente.
