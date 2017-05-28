@@ -1,6 +1,5 @@
 <?php	
 	session_start();	
-	if(isset($_POST["submit"])){
 	if (isset($_SESSION["PEDIDO"])) {
 		$pedido = $_SESSION["PEDIDO"];
 		unset($_SESSION["pedido"]);
@@ -8,12 +7,13 @@
 		require_once("gestionBD.php");
 		require_once("gestionPedidos.php");
 		
-		$conexion = crearConexionBD();		
-		$excepcion = confirmar_pedido($conexion,$pedido["NUM_PEDIDO"], 'NO');
+		$conexion = crearConexionBD();	
+		$excepcion = quitar_lineas_pedido($conexion,$pedido["NUM_PEDIDO"]);		
+		$excepcion = quitar_pedido($conexion,$pedido["NUM_PEDIDO"]);
 		cerrarConexionBD($conexion);
 			
 		if ($excepcion<>"") {
-			$exception= "El error está en la funcion modificar";
+			$exception= "El error está en la funcion borrar";
 			$_SESSION["exception"] = $exception;
 			$_SESSION["destino"] = "carrito.php";
 			Header("Location: exception.php");
@@ -22,6 +22,4 @@
 			Header("Location: carrito.php");
 		
 	} 
-	else Header("Location: carrito.php"); // Se ha tratado de acceder directamente a este PHP
-	}
 ?>

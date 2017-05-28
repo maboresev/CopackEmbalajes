@@ -13,4 +13,26 @@ function confirmar_pedido($conexion,$numpedido, $carrito) {
     }
 }
 
+function quitar_lineas_pedido($conexion,$NUMPEDIDO) {
+	try {
+		$stmt=$conexion->prepare('CALL QUITAR_LINEAS_PEDIDO(:numpedido)');
+		$stmt->bindParam(':numpedido',$NUMPEDIDO);
+		$stmt->execute();
+		return "";
+	} catch(PDOException $e) {
+		return $e->getMessage();
+    }
+}
+
+function quitar_pedido($conexion,$NUMPEDIDO) {
+	try {
+		$stmt=$conexion->prepare('CALL QUITAR_PEDIDO(:numpedido)');
+		$stmt->bindParam(':numpedido',$NUMPEDIDO);
+		$stmt->execute();
+		return "";
+	} catch(PDOException $e) {
+		return $e->getMessage();
+    }
+}
+
 ?>
