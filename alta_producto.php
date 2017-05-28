@@ -1,19 +1,46 @@
 <?php
-	session_start();
+session_start();
+	
 
-	// Si no existen datos del formulario en la sesión, se crea una entrada con valores por defecto
-	if (!isset($_SESSION['formulario'])) {
-		$formulario['nombre'] = "";
-		$formulario['precio'] = "";
-		$_SESSION['formulario'] = $formulario;
-	}
-	// Si ya existían valores, los cogemos para inicializar el formulario
-	else
-		$formulario = $_SESSION['formulario'];
+if(isset($_POST["submit"])){
+	require_once("gestionBD.php");
+	require_once("gestionProductos.php");
+	
+	$nombre = $_POST["nombre"];
+	$preciounitario = $_POST["preciounitario"];
+
+	$preciounitario = str_replace(".",",",$preciounitario);
+
+		$conexion = crearConexionBD();
+		$excepcion = alta_producto($conexion, 0, $nombre,0,$preciounitario,1);
+			$query = "SELECT PRODUCTO.OID_P
+				FROM PRODUCTO
+				WHERE PRODUCTO.NOMBRE = '${nombre}'";
+	$productos = $conexion ->query($query);
+	$oidp = "";
+	foreach($productos as $producto){
+	$oidp = $producto["OID_P"];
+	
+
+		
+	 
+}
+	$material= $_POST["material"];
+	$medidas= $_POST["medidas"];
+	$canal= $_POST["canal"];
+		$excepcion = alta_mastermat($conexion,$oidp, $material, $medidas, $canal);
+		cerrarConexionBD($conexion);
 			
-	// Si hay errores de validación, hay que mostrarlos y marcar los campos (El estilo viene dado y ya se explicará)
-	if (isset($_SESSION["errores"]))
-		$errores = $_SESSION["errores"];
+	if ($excepcion<>"") {
+			$exception= "El error está en la funcion modificar";
+			$_SESSION["exception"] = $exception;
+			$_SESSION["destino"] = "admin_productos.php";
+			Header("Location: exception.php");
+		}
+		else
+			Header("Location: admin_productos.php");
+}
+
 ?>
 
 
@@ -49,17 +76,18 @@
 	?>
 	
 		<div>
-			<form id="altaProducto" method="get" action="accion_alta_producto.php">
-					<input type="hidden" name="oidp" value="0">
+			<form method="post" action="alta_producto.php">
 				<label class="textoRegistro">Nombre:*<br>
 					<input type="text" name="nombre" required><br><label>
-					<input type="hidden" name="stock" value="0"><br><label>
-				<label class="textoRegistro">Precio:*<br>
+				<label class="textoRegistro">Precio:*
 					<input type="number" name="preciounitario" step="0.01" required><br><label>
-					<input type="hidden" name="oid_ual" value="1"><br><label>
-				<div id="registrar">
-					<input name="altaProducto" type="submit" value = "altaProducto">
-				</div>
+				<label class="textoRegistro">Material:*<br>
+					<input type="text" name="material"  required><br><label>
+				<label class="textoRegistro">Medidas:*<br>
+					<input type="text" name="medidas"  required><br><label>
+				<label class="textoRegistro">Canal:*<br>
+					<input type="text" name="canal" required><br><label>
+					<input name="submit" type="submit" value = "submit">
 			</form>
 		</div>
 

@@ -55,20 +55,34 @@ function modificar_master($conexion,$OidP,$NuevoProducto) {
     }
 }
 
- function alta_producto($conexion,$producto) {
+ function alta_producto($conexion,$oidp, $nombre, $stock, $preciounitario, $oid_ual) {
 
 	try {
-		$consulta = "CALL NUEVO_PRODUCTO(:oidp, :nombre, :apellidos, :stock, :preciounitario, :oid_ual)";
-		$stmt=$conexion->prepare($consulta);
-		$stmt->bindParam(':oidp',$producto["oidp"]);
-		$stmt->bindParam(':nombre',$producto["nombre"]);
-		$stmt->bindParam(':stock',$usuario["stock"]);
-		$stmt->bindParam(':precio',$usuario["precio"]);
-		$stmt->bindParam(':oid_ual',$usuario["oid_ual"]);
+		$stmt=$conexion->prepare('CALL NUEVO_PRODUCTO(:oidp, :nombre, :stock, :preciounitario, :oid_ual)');
+		$stmt->bindParam(':oidp',$oidp);
+		$stmt->bindParam(':nombre',$nombre);
+		$stmt->bindParam(':stock',$stock);
+		$stmt->bindParam(':preciounitario',$preciounitario);
+		$stmt->bindParam(':oid_ual',$oid_ual);
 		$stmt->execute();
-		return true;
+		return "";
 	} catch(PDOException $e) {
-		return false;
+		$e->getMessage();
+		$session;
+    }
+ }
+
+ function alta_mastermat($conexion,$oidp, $material, $medidas, $canal) {
+
+	try {
+		$stmt=$conexion->prepare('CALL master_producto(:oidp, :material, :medidas, :canal)');
+		$stmt->bindParam(':oidp',$oidp);
+		$stmt->bindParam(':material',$material);
+		$stmt->bindParam(':medidas',$medidas);
+		$stmt->bindParam(':canal',$canal);
+		$stmt->execute();
+		return "";
+	} catch(PDOException $e) {
 		$e->getMessage();
 		$session;
     }
