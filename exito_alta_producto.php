@@ -36,9 +36,10 @@
 				<p class="textoGen">El producto <strong><?php echo $nuevoProducto["nombre"]; ?></strong>, ha sido registrado correctamente<br><br>
 			   		Pulsa <a href="muestra_productos_admin.php" class="enlaceRedirige">aquí</a> para acceder a la gestión de los productos.</p>
 		<?php } else { ?>
-				<h1>El producto ya existe en la Base de Datos.</h1>
 				<div >	
-					Pulsa <a href="alta_producto.php">aquí</a> para volver al formulario.
+				<p class="textoGen">El producto ya existe en la Base de Datos.
+				<br><br>
+					Pulsa <a href="alta_producto.php">aquí</a> para volver al formulario.</p>
 				</div>
 		<?php } ?>
 

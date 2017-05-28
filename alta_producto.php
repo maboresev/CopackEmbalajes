@@ -55,8 +55,8 @@
 					<input type="text" name="nombre" required><br><label>
 					<input type="hidden" name="stock" value="0"><br><label>
 				<label class="textoRegistro">Precio:*<br>
-					<input type="number" name="precio" required><br><label>
-					<input type="hidden" name="oid_ual" value="<?php echo $_SESSION['OID_UAL'];?>"><br><label>
+					<input type="number" name="preciounitario" step="0.01" required><br><label>
+					<input type="hidden" name="oid_ual" value="1"><br><label>
 				<div id="registrar">
 					<input name="altaProducto" type="submit" value = "altaProducto">
 				</div>

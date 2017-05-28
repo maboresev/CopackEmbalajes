@@ -2,9 +2,11 @@
 	session_start();
 
 	if (isset($_SESSION["formulario"])) {
-		$nuevoProducto = $_SESSION["formulario"];
-		$_SESSION["formulario"] = null;
-		$_SESSION["errores"] = null;
+		$nuevoProducto["oidp"] = $_REQUEST["oidp"];
+		$nuevoProducto["nombre"] = $_REQUEST["nombre"];
+		$nuevoProducto["preciounitario"] = $_REQUEST["preciounitario"];
+		$nuevoProducto["oid_ual"] = $_REQUEST["oid_ual"];
+		$nuevoProducto["stock"] = $_REQUEST["stock"];
 	}
 	else 
 		Header("Location: alta_usuario.php");	
@@ -15,7 +17,7 @@
 		require_once("gestionProductos.php");
 		
 		$conexion = crearConexionBD();	
-		$excepcion = alta_producto($conexion, $producto);
+		$excepcion = alta_producto($conexion, $nuevoProducto);
 		cerrarConexionBD($conexion);
 			
 		if ($excepcion<>"") {

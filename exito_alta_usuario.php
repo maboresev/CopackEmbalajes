@@ -36,9 +36,10 @@
 				<p class="textoGen">Hola <strong><?php echo $nuevoUsuario["nombre"]; ?></strong>, gracias por registrarte<br><br>
 			   		Pulsa <a href="index_cliente.php" class="enlaceRedirige">aquí</a> para acceder a la gestión de sus pedidos.</p>
 		<?php } else { ?>
-				<h1>El usuario ya existe en la base de datos.</h1>
-				<div >	
-					Pulsa <a href="register.php">aquí</a> para volver al formulario.
+				<div >
+				<p class="textoGen">El usuario ya existe en la base de datos.
+					<br><br>
+					Pulsa <a href="register.php">aquí</a> para volver al formulario.</p>
 				</div>
 		<?php } ?>
 
