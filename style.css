@@ -38,6 +38,14 @@ input[type=text]{
 	margin-left: 11.55%;
 }
 
+input[type=number]{
+	margin-bottom:1%;
+	display: inline-block;
+	border-radius: 5%;
+	vertical-align: middle;
+	margin-left: 11.55%;
+}
+
 input[type=submit]{
 	margin-bottom:1%;
 	margin-top: 3%;
@@ -239,6 +247,17 @@ input[type=password]{
 	color: white;
 	font-size: 25px;
 	margin: 10%;
+}
+
+.textoCli{
+	text-align: left;
+	font-family: Georgia; 
+	color: white;
+	font-size: 22px;
+	text-decoration: justify;
+	margin-left: 10%;
+	margin-top: 1%;
+	margin-bottom: 1%;
 }
 
 #textoNosotros{

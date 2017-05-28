@@ -60,11 +60,11 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 						foreach($lineas as $linea){
 								if($linea["CORREOELECTRONICO"] == $email){
 									if(!in_array($linea["NUM_PEDIDO"],$pedidos)){
-									echo "<p>"."<strong>"."Pedido: ".$linea["NUM_PEDIDO"]."</strong>".". "."</p>"; 
+									echo "<p class='textoCli'>"."<strong>"."Pedido: ".$linea["NUM_PEDIDO"]."</strong>".". "."</p>"; 
 									array_push($pedidos, $linea["NUM_PEDIDO"]);	
 									}
 									
-									echo "<p>"."<strong>".$linea["NOMBRE"].": ".$linea["CANTIDADPEDIDA"]." unidades"."</strong>".". "."</p>"; 
+									echo "<p class='textoCli'>".$linea["NOMBRE"].": ".$linea["CANTIDADPEDIDA"]." unidades".". "."</p>"; 
 								}
 						}
 ?>

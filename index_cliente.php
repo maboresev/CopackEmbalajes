@@ -19,7 +19,7 @@ session_start();
 <main>
 
 	<div>
-		<p class="textoGen"> Bienvenido a la web </p>
+		<p class="textoGen"> Bienvenido a la web. Acceso a la gestión de pedidos y productos como cliente. </p>
 	</div>
 </main>
 

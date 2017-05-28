@@ -17,7 +17,7 @@
 <main>
 
 
-	<p id="textoGen"> Menú de administración (Página en construcción) </p>
+	<p class="textoGen"> Bienvenido al menú de administración de Copack. </p>
 
 </main>
 

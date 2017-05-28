@@ -60,8 +60,8 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 <form method="post" action="controlador_pedidos.php">
 <div class="datos_pedido">
 
-	<?php
-						echo "Tus pedidos en carrito: ";
+<p class="textoGen">	<?php
+						echo "Tus pedidos en carrito: "."</p>";
 						foreach ($clientes as $cliente){
 						if($email == $cliente["CORREOELECTRONICO"]){
 						?> 
@@ -100,7 +100,7 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 
 
 <?php
-									echo "<p>"."<strong>"."Pedido: ".$linea["NUM_PEDIDO"]."</strong>".". ".
+									echo "<p class='textoCli'>"."<strong>"."Pedido: ".$linea["NUM_PEDIDO"]."</strong>".". ".
 									'<input id="confirmar" name="confirmar_pedido" type="submit" class="confirmar_pedido" value="Confirmar pedido"></input>'.
 									'<input id="borrar" name="borrar" type="submit" class="borrar" value="Borrar"></input>'; 
 									
@@ -108,7 +108,7 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 									array_push($pedidos, $linea["NUM_PEDIDO"]);	
 									}
 									
-									echo "<p>"."<strong>".$linea["NOMBRE"].": ".$linea["CANTIDADPEDIDA"]." unidades"."</strong>".". "."</p>"; 
+									echo "<p>".$linea["NOMBRE"].": ".$linea["CANTIDADPEDIDA"]." unidades".". "."</p>"; 
 								}
 						}
 ?>
