@@ -1,5 +1,36 @@
 <?php 
 session_start();
+
+	require_once("gestionBD.php");
+	
+	if (isset($_SESSION["producto"])){
+		$producto = $_SESSION["producto"];
+		unset($_SESSION["producto"]);
+	}
+	
+	// ¿Venimos simplemente de cambiar página o de haber seleccionado un registro ?
+	// ¿Hay una sesión activa?
+	$email = $_SESSION["logincliente"];
+	$conexion = crearConexionBD();
+
+		// La consulta que ha de paginarse
+	$lpquery = "select PEDIDO.NUM_PEDIDO, PEDIDO.FECHA_PEDIDO,
+PRODUCTO.OID_P, PEDIDO.OID_C, PRODUCTO.NOMBRE,
+PRODUCTO.PRECIOUNITARIO, LINEA_DE_PEDIDO.CANTIDADPEDIDA,
+CLIENTE.CORREOELECTRONICO
+
+from LINEA_DE_PEDIDO, PEDIDO, PRODUCTO, CLIENTE
+
+where LINEA_DE_PEDIDO.NUM_PEDIDO = PEDIDO.NUM_PEDIDO and
+LINEA_DE_PEDIDO.OID_P = PRODUCTO.OID_P and CLIENTE.OID_C = PEDIDO.OID_C
+and PEDIDO.CARRITO = 'SI'
+
+
+ORDER BY PEDIDO.NUM_PEDIDO";
+
+	$lineas= $conexion->query($lpquery);
+
+	cerrarConexionBD($conexion);
 ?>
 
 <!DOCTYPE html>
@@ -18,10 +49,38 @@ session_start();
 ?>
 
 <main>
+<div class="margenTop"></div>
+	<article class="pedido">
+<form method="post" action="controlador_pedidos.php">
+<div class="datos_pedido">
 
-	<div>
-		<p class="textoGen"> Carrito </p>
-	</div>
+	<?php
+						$pedidos= array();
+						foreach($lineas as $linea){
+								
+								if($linea["CORREOELECTRONICO"] == $email){
+									if(!in_array($linea["NUM_PEDIDO"],$pedidos)){?>
+									<input type="hidden" id="NUM_PEDIDO" name="NUM_PEDIDO" value="<?php echo $linea["NUM_PEDIDO"]; ?>"/>
+
+<?php
+									echo "<p>"."<strong>"."Pedido: ".$linea["NUM_PEDIDO"]."</strong>".". ".'<input id="confirmar" name="confirmar_pedido" type="submit" class="confirmar_pedido" value="Confirmar pedido"></input>'; 
+								
+
+									array_push($pedidos, $linea["NUM_PEDIDO"]);	
+									}
+									
+									echo "<p>"."<strong>".$linea["NOMBRE"].": ".$linea["CANTIDADPEDIDA"]." unidades"."</strong>".". "."</p>"; 
+								}
+						}
+?>
+</div>
+</form>
+</article>
+
+
+<?php
+	include_once("pie.php");
+?>
 </main>
 
 <?php

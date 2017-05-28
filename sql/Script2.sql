@@ -126,10 +126,11 @@ END master_producto;
 CREATE OR REPLACE PROCEDURE inserta_pedido
   (w_ident IN PEDIDO.NUM_PEDIDO%TYPE,
    w_fecha IN PEDIDO.FECHA_PEDIDO%TYPE,
-   w_cliente IN PEDIDO.OID_C%TYPE) IS
+   w_cliente IN PEDIDO.OID_C%TYPE,
+   w_carrito IN PEDIDO.CARRITO%TYPE) IS
   BEGIN
   INSERT INTO PEDIDO
-    VALUES(w_ident, w_fecha, w_cliente);
+    VALUES(w_ident, w_fecha, w_cliente, w_carrito);
   COMMIT WORK;
 END inserta_pedido;
 
@@ -299,5 +300,17 @@ CREATE OR REPLACE PROCEDURE actualiza_cantidad_linea
       WHERE NUM_FACTURA=r_factura;
   COMMIT WORK;
 END actualiza_cantidad_linea;
+
+/
+
+CREATE OR REPLACE PROCEDURE actualiza_pedido_carrito
+  (r_numped IN PEDIDO.NUM_PEDIDO,
+  w_carrito IN PEDIDO.CARRITO) IS
+  BEGIN
+  UPDATE PEDIDO SET CARRITO = w_carrito
+  WHERE NUM_PEDIDO = r_numped;
+  COMMIT WORK;
+  END actualiza_pedido_carrito;
+
 
 /

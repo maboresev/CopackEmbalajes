@@ -51,9 +51,9 @@ execute alta_mantenimiento('0', 'Alejandro Manuel', 'Riao', 'ariao@gmail.com', '
 
 /* Pedidos abiertos */
 
-execute inserta_pedido('0', TO_DATE('2017-05-10 17:03:58', 'YYYY-MM-DD HH24:MI:SS'), '1');
-execute inserta_pedido('0', TO_DATE('2017-05-16 17:04:07', 'YYYY-MM-DD HH24:MI:SS'), '2');
-execute inserta_pedido('0', TO_DATE('2017-05-16 17:04:16', 'YYYY-MM-DD HH24:MI:SS'), '1');
+execute inserta_pedido('0', TO_DATE('2017-05-10 17:03:58', 'YYYY-MM-DD HH24:MI:SS'), '1', 'NO');
+execute inserta_pedido('0', TO_DATE('2017-05-16 17:04:07', 'YYYY-MM-DD HH24:MI:SS'), '2', 'NO');
+execute inserta_pedido('0', TO_DATE('2017-05-16 17:04:16', 'YYYY-MM-DD HH24:MI:SS'), '1', 'NO');
 
 execute inserta_linea_pedido('330000', '1002', '500');
 execute inserta_linea_pedido('330000', '1005', '1000');
