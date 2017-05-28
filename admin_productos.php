@@ -1,5 +1,5 @@
 <?php
-	session_start();
+
 
 	require_once("gestionBD.php");
 	require_once("gestionProductos.php");
@@ -27,7 +27,7 @@
 	if ($pag_tam < 1) $pag_tam = 5;
 	
 	// Antes de seguir, borramos las variables de sección para no confundirnos más adelante
-	unset($_SESSION["paginacion"]);
+
 
 	$conexion = crearConexionBD();
 
