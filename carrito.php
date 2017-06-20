@@ -67,7 +67,7 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 						?> 
 						<input type="hidden" id="OID_C" name="OID_C" value="<?php echo $cliente["OID_C"]; ?>"/>
 						<?php
-						echo '<input id="nuevo_pedido" name="nuevo_pedido" type="submit" class="nuevo_pedido" value="Crear pedido"></input>';
+						echo '<input  id="button" name="nuevo_pedido" type="submit" class="nuevo_pedido" value="Crear pedido"></input>';
 					
 						}
 						}
@@ -75,16 +75,11 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 						foreach($pedidos as $pedido){
 							
 							if($email == $pedido["CORREOELECTRONICO"] && $pedido["CARRITO"] == "SI" ){
-								?>
-								<li>
-								
-								<?php
-								echo $pedido['NUM_PEDIDO'];
+							
+								echo '<li id="pedido">Pedido '.$pedido['NUM_PEDIDO'].'</li>';
 
 								?>
-								
-								</li>
-								
+											
 								
 								<?php
 
@@ -95,22 +90,33 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 						foreach($lineas as $linea){
 								
 								if($linea["CORREOELECTRONICO"] == $email){
-									if(!in_array($linea["NUM_PEDIDO"],$pedidos)){?>
+									
+									if(!in_array($linea["NUM_PEDIDO"],$pedidos)){
+										?>
 									<input type="hidden" id="NUM_PEDIDO" name="NUM_PEDIDO" value="<?php echo $linea["NUM_PEDIDO"]; ?>"/>
-
+									
 
 <?php
-									echo "<p class='textoCli'>"."<strong>"."Pedido: ".$linea["NUM_PEDIDO"]."</strong>".". ".
-									'<input id="confirmar" name="confirmar_pedido" type="submit" class="confirmar_pedido" value="Confirmar pedido"></input>'.
-									'<input id="borrar" name="borrar" type="submit" class="borrar" value="Borrar"></input>'; 
+									
+									echo 
+									'<input id="button" name="confirmar_pedido" type="submit" class="confirmar_pedido" value="Confirmar pedido"></input>'.
+									'<input id="button" name="borrar" type="submit" class="borrar" value="Borrar"></input>'.'</br>'.
+									'<div class="pedido">'.
+									'<strong>'.'Pedido: '.$linea["NUM_PEDIDO"].'</strong>'.'. '.'</br>'	;
+								
 									
 
 									array_push($pedidos, $linea["NUM_PEDIDO"]);	
 									}
 									
-									echo "<p>".$linea["NOMBRE"].": ".$linea["CANTIDADPEDIDA"]." unidades".". "."</p>"; 
+									echo $linea["NOMBRE"].": ".$linea["CANTIDADPEDIDA"]." unidades".". "."</br>"; 
+
 								}
+								
 						}
+
+						
+						
 ?>
 </div>
 </form>
