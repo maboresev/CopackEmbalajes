@@ -28,6 +28,38 @@
   <meta charset="utf-8">
   <title>Gestión de Usuarios: Formulario de registro</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
+  <script lang="javascript">
+	function valida(){
+		nombre=document.getElementById("nombre").value;
+		apellidos=document.getElementById("apellidos").value;
+		email=document.getElementById("email").value;
+		empresa=document.getElementById("empresa").value;
+		
+		if((nombre == null) || (nombre.length == 0) || (/^\s+$/.test(nombre))){
+			alert("Por favor, escriba un nombre válido");
+			document.getElementById("nombre").style.borderColor="red";
+			return false;
+		}
+		else if((apellidos == null) || (apellidos.length == 0) || (/^\s+$/.test(apellidos))){
+			alert("Por favor, escriba al menos un apellido");
+			document.getElementById("apellidos").style.borderColor="red";
+			return false;
+		}
+		else if (!/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
+			alert('Error: Formato de correo electrónico incorrecto.');
+			document.getElementById("email").style.borderColor="red";
+			return false;
+		}
+		else if((empresa == null) || (empresa.length == 0) || (/^\s+$/.test(empresa))){
+			alert("Por favor, rellene correctamente el nombre de su empresa");
+			document.getElementById("empresa").style.borderColor="red";
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
+  </script>
 </head>
 
 <body>
@@ -52,20 +84,20 @@
 	?>
 	
 <div>
-	<form id="altaUsuario" method="get" action="accion_alta_usuario.php">
+	<form id="altaUsuario" method="post" onsubmit="return valida()" action="accion_alta_usuario.php">
 			<input type="hidden" name="oidc" value="0">
-		<label class="textoRegistro">Nombre:*<br>
-			<input type="text" name="nombre" required><br><label>
-		<label class="textoRegistro">Apellidos:*<br>
-			<input type="text" name="apellidos" required><br><label>
-		<label class="textoRegistro">password:*<br>
-			<input type="password" name="password" required><br><label>
-		<label class="textoRegistro">Confirmar password:*<br>
-			<input type="password" name="passwordconf"><br><label>
-		<label class="textoRegistro">Email:*<br>
-			<input type="text" name="email" required><br><label>
-		<label class="textoRegistro">Empresa:*<br>
-			<input type="text" name="empresa" required><br><label>
+		<label class="textoRegistro" for="nombre">Nombre:*<br>
+			<input type="text" name="nombre" id="nombre" required><br></label>
+		<label class="textoRegistro" for="apellidos">Apellidos:*<br>
+			<input type="text" name="apellidos" id="apellidos" required><br></label>
+		<label class="textoRegistro" for="password">password:*<br>
+			<input type="password" name="password" id="password" required><br></label>
+		<label class="textoRegistro" for="passwordconf">Confirmar password:*<br>
+			<input type="password" name="passwordconf" id="passwordconf"><br></label>
+		<label class="textoRegistro" for="email">Email:*<br>
+			<input type="text" name="email" id="email" required><br></label>
+		<label class="textoRegistro" for="empresa">Empresa:*<br>
+			<input type="text" name="empresa" id="empresa" required><br></label>
 		<div id="registrar">
 			<input name="Registrar" type="submit" value = "registrar">
 		</div>

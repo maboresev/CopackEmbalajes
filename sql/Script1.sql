@@ -104,7 +104,7 @@ CREATE TABLE LINEA_DE_PEDIDO
 (PRIMARY KEY (Num_pedido, OID_P),
 Num_pedido NUMBER(8),
 OID_P NUMBER (8),
-CantidadPedida NUMBER(10) not null CHECK (CantidadPedida > 299),
+CantidadPedida NUMBER(10) not null CHECK (CantidadPedida > 0),
 FOREIGN KEY (OID_P) REFERENCES PRODUCTO ON DELETE set null,
 FOREIGN KEY (Num_pedido) REFERENCES PEDIDO ON DELETE set null);
 

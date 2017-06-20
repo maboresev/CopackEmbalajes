@@ -15,7 +15,7 @@
 		cerrarConexionBD($conexion);
 			
 		if ($excepcion<>"") {
-			$exception= "El error está en la funcion añadir";
+			$exception= "Su pedido debe ser superior a 1 unidad";
 			$_SESSION["exception"] = $exception;
 			$_SESSION["destino"] = "carrito.php";
 			Header("Location: exception.php");
@@ -31,6 +31,18 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
+  <script lang="javascript">
+	function cantidad(){
+		cantidad = document.getElementById("cantidad").value;
+		if(cantidad <1){
+			window.alert("Por favor, corrija la cantidad insertada");
+			return false;
+		}else{
+			return true;
+		}
+	}
+  </script>
+  
 </head>
 
 <body>
@@ -40,9 +52,9 @@
 
 	
 	<!-- The HTML login form -->
-	<form action="accion_anadir_carrito.php" method="post">
-		<div>Número de pedido:<input type="text" name="numpedido" id="num" /></div>
-		<div>Cantidad:<input type="number" name="cantidad" id="cantidad" /></div>
+	<form action="accion_anadir_carrito.php" method="post" onsubmit="return cantidad()">
+		<div>Número de pedido:<input type="text" name="numpedido" id="num" required/></div>
+		<div>Cantidad:<input type="number" name="cantidad" id="cantidad" required /></div>
 		<input type="submit" name="submit" value="submit" />
 	</form>
 </main>
