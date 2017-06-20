@@ -1,8 +1,4 @@
-<?php 
-session_start();
-if(!isset($_SESSION['loginadm'])){
-	Header("Location: login.php");
-}
+<?php
 
 	require_once("gestionBD.php");
 	

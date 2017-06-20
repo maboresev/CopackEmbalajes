@@ -1,4 +1,9 @@
-
+<?php
+session_start();
+if(!isset($_SESSION['loginadm'])){
+	Header("Location: login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
