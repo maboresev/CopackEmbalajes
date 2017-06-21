@@ -125,9 +125,9 @@
 				
 						echo "Precio(unidad): ".$fila["PRECIOUNITARIO"]."€.";
 				
-						?>
-							<input id="borrar" name="borrar" type="submit" class="editar_fila" value="borrar"></input>
-							<input id="editar" name="editar" type="submit" class="editar_fila" value="editar"></input>
+						?>							<label class="editar_fila">
+							<input id="borrar" name="borrar" type="submit" value="borrar"></input></label>							<label class="editar_fila">
+							<input id="editar" name="editar" type="submit" value="editar"></input></label>
 							
 						
 						</p>

@@ -115,7 +115,7 @@
 						<?php  
 						echo "<p>"."<strong>"."Producto: ".$fila["NOMBRE"]."</strong>".". ";
 						echo "Precio(unidad): ".$fila["PRECIOUNITARIO"]."€.";
-						echo '<input id="añadir_carrito" name="añadir_carrito" type="submit" class="añadir_carrito" value="Añadir al carrito"></input>';
+						echo '<label class="editar_fila"><input id="añadir_carrito" name="añadir_carrito" type="submit" class="añadir_carrito" value="Añadir al carrito"></input></label>';
 						?>
 						</p>
 						<h4><?php echo "Material: ".$fila["MATERIAL"].". ";

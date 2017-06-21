@@ -71,31 +71,52 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
+	<meta charset="utf-8">
+	<title>Gestión de Usuarios: Formulario de acceso</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
-<main>
-<?php if (isset($login)) {
-		echo "<div class=\"error\">";
-		echo "Error en la contraseña o no existe el usuario.";
+<body>
+
+	<div class="topLogin">
+		<h2> Bienvenido al formulario de acceso a usuarios registrados </h2>
+		<p> Por favor, rellene sus datos. Si tiene algún problema, contacte con el administrador del sistema mediante el <a href="contacta.php" class="enlaceRedirige">formulario de contacto</a>.<p>
+	</div>
+	
+	<?php if (isset($login)) {
+		echo "<div id=\"div_errores\" class=\"error\">";
+		echo "<h4>Error en la contraseña o no existe el usuario.</h4>";
 		echo "</div>";
-	}	
+		}	
+	?>
+	
+	<div class="formulario">
+		<form action="login.php" method="post">
+			<label class="textoRegistro" for="email">Email:*<br><br>
+				<input type="text" name="email" id="email" required /></label><br>
+			<label class="textoRegistro" for="password">Contraseña:*<br>
+				<input type="password" name="password" id="password" required /></label><br><br>
+			<label class="textoRegistro">	
+				<input type="radio" name="tipousuario" value="cliente" checked> Cliente
+				<input type="radio" name="tipousuario" value="adm"> Administración
+				<input type="radio" name="tipousuario" value="alm"> Almacén
+			</label>
+			<br><br>
+			<label class="textoRegistro">	
+				<button type="submit" name="submit" value="submit">Log in</button>
+			</label>
+			<br>
+			
+			</form>
+	</div>
+		
+		<p class="textoGen">¿Aún no estás registrado? <a href="register.php" class="enlaceRedirige">Regístrate</a> 
+							o vuelve a la <a href="index.php" class="enlaceRedirige">página de inicio</a>.</p>
+	
+	<br><br>
+	
+	<?php
+		include_once("pie.php");
 	?>
 
-<div class="formulario">
-	<form action="login.php" method="post">
-		Email:<br>
-		<input type="text" name="email" required/><br>
-		Contraseña:<br>
-		<input type="password" name="password" required/><br><br>
-		<input type="radio" name="tipousuario" value="cliente" checked> Cliente
-		<input type="radio" name="tipousuario" value="adm"> Administración
-		<input type="radio" name="tipousuario" value="alm"> Almacén
-		<?php /*<input type="radio" name="tipousuario" value="mant"> Mantenimiento<br>*/
-		?>
-		<button type="submit" name="submit" value="submit">Log in</button>
-		 
-		<a href="register.php">Regístrate</a>
-	</form>
-</div>
-</main>
+</body>
 </html>

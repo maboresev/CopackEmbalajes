@@ -63,15 +63,15 @@
 </head>
 
 <body>
-<div class="topLogin">
-	<h2> Bienvenido al formulario de registro de clientes </h2>
-	<p> Complete todos los campos obligatorios (marcados con *) y siga las instrucciones:<p>
-	<ul>
-		<li>La contraseña debe tener al menos 8 caracteres, entre ellos mayúsculas, minúsculas y números.</li>
-		<li>La dirección de correo electrónico debe ser real y tener el formato example@copack.com</li>
-		<li>Si es usted un particular, rellene el campo "Empresa" con la palabra "particular" y contacte con nosotros en el formulario <a link="sobre_nosotros.php">de la web</a></li>
-	</ul>
-</div>
+	<div class="topLogin">
+		<h2> Bienvenido al formulario de registro de clientes </h2>
+		<p> Complete todos los campos obligatorios (marcados con *) y siga las instrucciones:<p>
+		<ul>
+			<li>La contraseña debe tener al menos 8 caracteres, entre ellos mayúsculas, minúsculas y números.</li>
+			<li>La dirección de correo electrónico debe ser real y tener el formato example@copack.com</li>
+			<li>Si es usted un particular, rellene el campo "Empresa" con la palabra "particular" y contacte con nosotros en el formulario <a link="sobre_nosotros.php">de la web</a></li>
+		</ul>
+	</div>
 
 	<?php 
 		// Mostrar los erroes de validación (Si los hay)
@@ -83,26 +83,31 @@
   		}
 	?>
 	
-<div>
-	<form id="altaUsuario" method="post" onsubmit="return valida()" action="accion_alta_usuario.php">
-			<input type="hidden" name="oidc" value="0">
-		<label class="textoRegistro" for="nombre">Nombre:*<br>
-			<input type="text" name="nombre" id="nombre" required><br></label>
-		<label class="textoRegistro" for="apellidos">Apellidos:*<br>
-			<input type="text" name="apellidos" id="apellidos" required><br></label>
-		<label class="textoRegistro" for="password">password:*<br>
-			<input type="password" name="password" id="password" required><br></label>
-		<label class="textoRegistro" for="passwordconf">Confirmar password:*<br>
-			<input type="password" name="passwordconf" id="passwordconf"><br></label>
-		<label class="textoRegistro" for="email">Email:*<br>
-			<input type="text" name="email" id="email" required><br></label>
-		<label class="textoRegistro" for="empresa">Empresa:*<br>
-			<input type="text" name="empresa" id="empresa" required><br></label>
-		<div id="registrar">
-			<input name="Registrar" type="submit" value = "registrar">
-		</div>
-	</form>
-</div>
+	<div>
+		<form id="altaUsuario" method="post" onsubmit="return valida()" action="accion_alta_usuario.php">
+				<input type="hidden" name="oidc" value="0">
+			<label class="textoRegistro" for="nombre">Nombre:*<br>
+				<input type="text" name="nombre" id="nombre" required><br></label>
+			<label class="textoRegistro" for="apellidos">Apellidos:*<br>
+				<input type="text" name="apellidos" id="apellidos" required><br></label>
+			<label class="textoRegistro" for="password">password:*<br>
+				<input type="password" name="password" id="password" required><br></label>
+			<label class="textoRegistro" for="passwordconf">Confirmar password:*<br>
+				<input type="password" name="passwordconf" id="passwordconf"><br></label>
+			<label class="textoRegistro" for="email">Email:*<br>
+				<input type="text" name="email" id="email" required><br></label>
+			<label class="textoRegistro" for="empresa">Empresa:*<br>
+				<input type="text" name="empresa" id="empresa" required><br></label>
+			<label class="textoRegistro">
+				<input name="Registrar" type="submit" value = "registrar">
+			</label>
+		</form>
+	</div>
+
+		<p class="textoGen">¿Ya estás registrado? <a href="login.php" class="enlaceRedirige">Accede a tu usuario</a> 
+							o vuelve a la <a href="index.php" class="enlaceRedirige">página de inicio</a>.</p>
+	
+	<br><br>
 
 <?php
 		include_once("pie.php");
