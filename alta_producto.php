@@ -77,19 +77,20 @@ if(isset($_POST["submit"])){
 		<div>
 			<form method="post" action="alta_producto.php">
 				<label class="textoRegistro">Nombre:*<br>
-					<input type="text" name="nombre" required><br><label>
+					<input type="text" name="nombre" required><br></label>
 				<label class="textoRegistro">Precio:*
-					<input type="number" name="preciounitario" step="0.01" required><br><label>
+					<input type="number" name="preciounitario" step="0.01" required><br></label>
 				<label class="textoRegistro">Material:*<br>
-					<input type="text" name="material"  required><br><label>
+					<input type="text" name="material"  required><br></label>
 				<label class="textoRegistro">Medidas:*<br>
-					<input type="text" name="medidas"  required><br><label>
+					<input type="text" name="medidas"  required><br></label>
 				<label class="textoRegistro">Canal:*<br>
-					<input type="text" name="canal" required><br><label>
-					<input name="submit" type="submit" value = "submit">
+					<input type="text" name="canal" required><br></label>
+				<label class="textoRegistro">
+					<input name="submit" type="submit" value = "submit"></label>
 			</form>
-		</div>
-
+		</div> <br>
+			
 	</div>
 </main>
 

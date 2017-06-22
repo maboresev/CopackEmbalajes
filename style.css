@@ -260,6 +260,27 @@ input[type=password]{
 	margin-bottom: 1%;
 }
 
+.textoCliPrinc{
+	text-align: left;
+	font-family: Georgia; 
+	color: white;
+	font-size: 23px;
+	text-decoration: underline;
+	margin-left: 10%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+.textoCarro{
+	text-align: center;
+	font-family: Georgia;
+	color: white;
+	font-size: 25px;
+	margin-top: 7%;
+	margin-bottom: 4%;
+}
+
+
 #textoNosotros{
 	font-size: 22px;
 	margin-bottom: 4%;
@@ -344,7 +365,7 @@ input[type=password]{
 }
 
 .editar_fila{
- width:5%;
+ width:auto;
  float:right;
 }
 
@@ -360,10 +381,27 @@ input[type=password]{
  float:center;
 } 
 
+
+.info{
+ width: 0,5%;
+ height: 0,5%;
+ float:center;
+} 
+
 .margenInfo{
 	margin-top: 1%;
 	margin-bottom: 5%;
 	position: center;
+}
+
+.botonCarrito{
+	text-align: left;
+	font-family: Georgia; 
+	color: white;
+	font-size: 22px;
+	text-decoration: justify;
+	margin-left: 10%;
+	margin-bottom: 5%;
 }
 
 /* Enlaces y vínculos */
@@ -390,6 +428,7 @@ input[type=password]{
 }
 
 #button{
+<<<<<<< HEAD
 	margin-right: 2px;
 	background-color: black;
     border-radius: 2px;
@@ -400,3 +439,8 @@ input[type=password]{
     display: inline-block;
     font-size: 12px;
 }
+=======
+	height: 15px;
+}
+
+>>>>>>> master

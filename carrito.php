@@ -57,24 +57,28 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 <main>
 <div class="margenTop"></div>
 	<article class="pedido">
-<form method="post" action="controlador_pedidos.php">
-<div class="datos_pedido">
+		<form method="post" action="controlador_pedidos.php">
+			<div class="datos_pedido">
 
-<p class="textoGen">	<?php
-						echo "Tus pedidos en carrito: "."</p>";
+					<?php
+						echo "<p class='textoCarro'>Tus pedidos en carrito: "."</p>";
 						foreach ($clientes as $cliente){
 						if($email == $cliente["CORREOELECTRONICO"]){
 						?> 
 						<input type="hidden" id="OID_C" name="OID_C" value="<?php echo $cliente["OID_C"]; ?>"/>
 						<?php
+<<<<<<< HEAD
 						echo '<input  id="button" name="nuevo_pedido" type="submit" class="nuevo_pedido" value="Crear pedido"></input>';
+=======
+						echo '<label class="textoCli">Pedidos abiertos: <input id="nuevo_pedido" name="nuevo_pedido" type="submit" class="nuevo_pedido" value="Crear pedido"></input></label>';
+>>>>>>> master
 					
 						}
 						}
-						echo "<ul>";
 						foreach($pedidos as $pedido){
 							
 							if($email == $pedido["CORREOELECTRONICO"] && $pedido["CARRITO"] == "SI" ){
+<<<<<<< HEAD
 							
 								echo '<li id="pedido">Pedido '.$pedido['NUM_PEDIDO'].'</li>';
 
@@ -82,10 +86,13 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 											
 								
 								<?php
+=======
+
+								echo "<p class='textoCli'>- ".$pedido['NUM_PEDIDO']."</p>";
+>>>>>>> master
 
 							}
 						}
-						echo "</ul>";
 						$pedidos= array();
 						foreach($lineas as $linea){
 								
@@ -94,6 +101,7 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 									if(!in_array($linea["NUM_PEDIDO"],$pedidos)){
 										?>
 									<input type="hidden" id="NUM_PEDIDO" name="NUM_PEDIDO" value="<?php echo $linea["NUM_PEDIDO"]; ?>"/>
+<<<<<<< HEAD
 									
 
 <?php
@@ -104,16 +112,30 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 									'<div class="pedido">'.
 									'<strong>'.'Pedido: '.$linea["NUM_PEDIDO"].'</strong>'.'. '.'</br>'	;
 								
+=======
+					<br><br>
+
+					<?php
+									echo "<p class='textoCliPrinc'>"."<strong>"."Pedido: ".$linea["NUM_PEDIDO"]."</strong>".".</p> ";
+>>>>>>> master
 									
 
 									array_push($pedidos, $linea["NUM_PEDIDO"]);	
 									}
 									
+<<<<<<< HEAD
 									echo $linea["NOMBRE"].": ".$linea["CANTIDADPEDIDA"]." unidades".". "."</br>"; 
 
+=======
+									echo "<p class='textoCli'>- ".$linea["NOMBRE"].": ".$linea["CANTIDADPEDIDA"]." unidades".". "."</p>"; 
+									
+									echo '<div class="botonCarrito"><input id="confirmar" name="confirmar_pedido" type="submit" class="confirmar_pedido" value="Confirmar pedido"></input>'.
+									'<input id="borrar" name="borrar" type="submit" class="borrar" value="Borrar"></input></div>'; 
+>>>>>>> master
 								}
 								
 						}
+<<<<<<< HEAD
 
 						
 						
@@ -121,6 +143,12 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 </div>
 </form>
 </article>
+=======
+					?>
+			</div>
+		</form>
+	</article>
+>>>>>>> master
 
 
 <?php

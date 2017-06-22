@@ -14,12 +14,13 @@ if(!isset($_SESSION['loginalm'])){
 
 <body>
 <main>
-	<form method="post" action="logout.php">
-	<input type="submit" name="logout" value="Log out"></button>
-	</form>
 	<ul class="menu" id="menuPrincipal">
 		<li id="elementoMenu"><a id="linkMenu" href="almacen.php">Gestión del stock en almacén</a></li>
-	
+		<li id="elementoMenu">	
+			<form method="post" action="logout.php">
+				<input type="submit" name="logout" value="Log out"></button>
+			</form>
+		</li>	
 	</ul>
 
 </main>

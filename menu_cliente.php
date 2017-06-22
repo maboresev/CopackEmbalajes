@@ -14,13 +14,16 @@ if(!isset($_SESSION['logincliente'])){
 
 <body>
 <main>
-	<form method="post" action="logout.php">
-	<input type="submit" name="logout" value="Log out"></button>
-	</form>
+
 	<ul class="menu" id="menuPrincipal">
 		<li id="elementoMenu"><a id="linkMenu" href="mis_pedidos.php">Mis pedidos</a></li>
 		<li id="elementoMenu"><a id="linkMenu" href="muestra_productos_cliente.php">Productos</a></li>
 		<li id="elementoMenu"><a id="linkMenu" href="carrito.php">Carrito</a></li>
+		<li id="elementoMenu">	
+			<form method="post" action="logout.php">
+				<input type="submit" name="logout" value="Log out"></button>
+			</form>
+		</li>	
 	</ul>
 
 </main>

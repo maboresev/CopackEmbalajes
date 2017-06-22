@@ -252,7 +252,7 @@
 						?>
 
 
-							<input id="stock" name="stock" type="submit" class="editar_fila" value="stock"></input>
+							<label class="editar_fila"><input id="stock" name="stock" type="submit" class="editar_fila" value="modificar stock"></input><label>
 							
 						
 
