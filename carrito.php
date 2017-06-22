@@ -67,18 +67,15 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 						?> 
 						<input type="hidden" id="OID_C" name="OID_C" value="<?php echo $cliente["OID_C"]; ?>"/>
 						<?php
-<<<<<<< HEAD
-						echo '<input  id="button" name="nuevo_pedido" type="submit" class="nuevo_pedido" value="Crear pedido"></input>';
-=======
-						echo '<label class="textoCli">Pedidos abiertos: <input id="nuevo_pedido" name="nuevo_pedido" type="submit" class="nuevo_pedido" value="Crear pedido"></input></label>';
->>>>>>> master
+						
+						echo '<input  id="button" name="nuevo_pedido" type="submit" class="nuevo_pedido" value="Crear pedido"></input></br>';
+						echo '<h2>Tus pedidos en carrito: </h2>';
 					
 						}
 						}
 						foreach($pedidos as $pedido){
 							
 							if($email == $pedido["CORREOELECTRONICO"] && $pedido["CARRITO"] == "SI" ){
-<<<<<<< HEAD
 							
 								echo '<li id="pedido">Pedido '.$pedido['NUM_PEDIDO'].'</li>';
 
@@ -86,10 +83,7 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 											
 								
 								<?php
-=======
 
-								echo "<p class='textoCli'>- ".$pedido['NUM_PEDIDO']."</p>";
->>>>>>> master
 
 							}
 						}
@@ -101,41 +95,32 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 									if(!in_array($linea["NUM_PEDIDO"],$pedidos)){
 										?>
 									<input type="hidden" id="NUM_PEDIDO" name="NUM_PEDIDO" value="<?php echo $linea["NUM_PEDIDO"]; ?>"/>
-<<<<<<< HEAD
 									
 
 <?php
 									
-									echo 
-									'<input id="button" name="confirmar_pedido" type="submit" class="confirmar_pedido" value="Confirmar pedido"></input>'.
-									'<input id="button" name="borrar" type="submit" class="borrar" value="Borrar"></input>'.'</br>'.
-									'<div class="pedido">'.
-									'<strong>'.'Pedido: '.$linea["NUM_PEDIDO"].'</strong>'.'. '.'</br>'	;
+									
+									?>
 								
-=======
 					<br><br>
 
-					<?php
+					<?php	
+									
 									echo "<p class='textoCliPrinc'>"."<strong>"."Pedido: ".$linea["NUM_PEDIDO"]."</strong>".".</p> ";
->>>>>>> master
 									
 
 									array_push($pedidos, $linea["NUM_PEDIDO"]);	
 									}
 									
-<<<<<<< HEAD
-									echo $linea["NOMBRE"].": ".$linea["CANTIDADPEDIDA"]." unidades".". "."</br>"; 
 
-=======
 									echo "<p class='textoCli'>- ".$linea["NOMBRE"].": ".$linea["CANTIDADPEDIDA"]." unidades".". "."</p>"; 
-									
-									echo '<div class="botonCarrito"><input id="confirmar" name="confirmar_pedido" type="submit" class="confirmar_pedido" value="Confirmar pedido"></input>'.
-									'<input id="borrar" name="borrar" type="submit" class="borrar" value="Borrar"></input></div>'; 
->>>>>>> master
+									echo 
+									'<input style="margin-left:10%" id="button" name="confirmar_pedido" type="submit" class="confirmar_pedido" value="Confirmar pedido"></input>'.
+									'<input id="button" name="borrar" type="submit" class="borrar" value="Borrar"></input>'.'</br>'.
+									'<div class="pedido">';
 								}
 								
 						}
-<<<<<<< HEAD
 
 						
 						
@@ -143,12 +128,9 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 </div>
 </form>
 </article>
-=======
-					?>
 			</div>
 		</form>
 	</article>
->>>>>>> master
 
 
 <?php
