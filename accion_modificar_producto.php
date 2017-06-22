@@ -33,6 +33,8 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title> Modificación del stock </title>
 </head>
 
 <body>
@@ -40,11 +42,11 @@
 
 <main>
 
-	
+	<div class="margenTop"></div>
 	<!-- The HTML login form -->
 	<form action="accion_modificar_producto.php" method="post">
-		<div>Nuevo precio:<input type="number" step="0.01" name="preciomod" id="preciomod" /></div>
-		<input type="submit" name="submit" value="submit" />
+		<label class="textoRegistro">Nuevo precio:<input type="number" step="0.01" name="preciomod" id="preciomod" /></label> <br>
+		<label class="textoRegistro"><input type="submit" name="submit" value="submit" /></label>
 	</form>
 </main>
 </body>

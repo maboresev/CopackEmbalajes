@@ -14,7 +14,7 @@
 		cerrarConexionBD($conexion);
 			
 		if ($excepcion!= null) {
-			$exception= "El error está en la funcion crear";
+			$exception= "Producto no válido.";
 			$_SESSION["exception"] = $exception;
 			$_SESSION["destino"] = "alta_producto.php";
 			Header("Location: exception.php");

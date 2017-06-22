@@ -16,7 +16,7 @@
 		cerrarConexionBD($conexion);
 			
 		if ($excepcion<>"") {
-			$exception= "El error está en la funcion modificar";
+			$exception= "Formato de entrada no válido";
 			$_SESSION["exception"] = $exception;
 			$_SESSION["destino"] = "almacen.php";
 			Header("Location: exception.php");
@@ -33,6 +33,8 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title> Modificación del stock </title>
 </head>
 
 <body>
@@ -40,11 +42,12 @@
 
 <main>
 
+	<div class="margenTop"></div>
 	
 	<!-- The HTML login form -->
 	<form action="accion_modificar_stock.php" method="post">
-		<div>Stock actual:<input type="number" name="stockmod" id="stockmod" /></div>
-		<input type="submit" name="submit" value="submit" />
+		<label class="textoRegistro">Stock actual:<input type="number" name="stockmod" id="stockmod" /></label><br>
+		<label class="textoRegistro"><input type="submit" name="submit" value="submit" /></label>
 	</form>
 </main>
 </body>

@@ -31,7 +31,7 @@ if(isset($_POST["submit"])){
 		cerrarConexionBD($conexion);
 			
 	if ($excepcion<>"") {
-			$exception= "El error está en la funcion modificar";
+			$exception= "Error al crear el master";
 			$_SESSION["exception"] = $exception;
 			$_SESSION["destino"] = "admin_productos.php";
 			Header("Location: exception.php");
