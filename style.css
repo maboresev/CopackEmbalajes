@@ -319,6 +319,32 @@ input[type=password]{
 	margin-bottom: 7%;
 }
 
+/*Gestión de pedidos*/
+
+#pedido{
+	margin-left: 1%;
+	margin-right:1%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	padding-top: 0.1%;
+	padding-bottom: 0.1%;
+	background-color: grey;
+	display: inline;
+	border-radius: 5px;
+}
+
+#pedido_lista{
+	margin-left: 1%;
+	margin-right:1%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	padding-top: 0.1%;
+	padding-bottom: 0.1%;
+	background-color: lightblue;
+	border-radius: 5px;
+}
+
+
 /* Gestión de productos */
 
 .producto{
@@ -402,6 +428,19 @@ input[type=password]{
 }
 
 #button{
+<<<<<<< HEAD
+	margin-right: 2px;
+	background-color: black;
+    border-radius: 2px;
+    color: white;
+    padding: 7px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+=======
 	height: 15px;
 }
 
+>>>>>>> master

@@ -14,13 +14,13 @@
 	$lpquery = "select PEDIDO.NUM_PEDIDO, PEDIDO.FECHA_PEDIDO,
 PRODUCTO.OID_P, PEDIDO.OID_C, PRODUCTO.NOMBRE,
 PRODUCTO.PRECIOUNITARIO, LINEA_DE_PEDIDO.CANTIDADPEDIDA,
-CLIENTE.CORREOELECTRONICO
+CLIENTE.CORREOELECTRONICO, CLIENTE.NOMBRE as NOMBRECLIENTE, CLIENTE.APELLIDOS
 
 from LINEA_DE_PEDIDO, PEDIDO, PRODUCTO, CLIENTE
 
 where LINEA_DE_PEDIDO.NUM_PEDIDO = PEDIDO.NUM_PEDIDO and
 LINEA_DE_PEDIDO.OID_P = PRODUCTO.OID_P and CLIENTE.OID_C = PEDIDO.OID_C
-and PEDIDO.CARRITO = 'SI'
+and PEDIDO.CARRITO = 'NO'
 
 
 ORDER BY PEDIDO.NUM_PEDIDO";
@@ -55,7 +55,7 @@ ORDER BY PEDIDO.NUM_PEDIDO";
 								
 
 									if(!in_array($linea["NUM_PEDIDO"],$pedidos)){
-									echo "<p class='textoCli'>"."<strong>"."Pedido: ".$linea["NUM_PEDIDO"]."</strong>".". ";
+									echo "<p class='textoCli'>"."<strong>"."Pedido: ".$linea["NUM_PEDIDO"]."</strong>".". "." Cliente: ".$linea["NOMBRECLIENTE"]." ".$linea["APELLIDOS"];
 									
 
 									array_push($pedidos, $linea["NUM_PEDIDO"]);	
